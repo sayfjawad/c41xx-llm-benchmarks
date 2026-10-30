@@ -36,9 +36,10 @@ De crux zit in de **KV-cache-geometrie**, niet in modelkwaliteit: een dense 70B/
 4. [Resultaten in één tabel](#-resultaten-in-één-tabel)
 5. [Het verhaal](#-het-verhaal)
 6. [Belangrijkste lessen](#-belangrijkste-lessen)
-7. [Hoeveel schijfruimte heb je nodig?](#-hoeveel-schijfruimte-heb-je-nodig)
-8. [Zelf reproduceren](#-zelf-reproduceren)
-9. [Bronnen](#-bronnen)
+7. [Verkenning: 750B-MoE via expert-offload (niet gemeten)](#-verkenning-750b-moe-via-expert-offload-niet-gemeten)
+8. [Hoeveel schijfruimte heb je nodig?](#-hoeveel-schijfruimte-heb-je-nodig)
+9. [Zelf reproduceren](#-zelf-reproduceren)
+10. [Bronnen](#-bronnen)
 
 ---
 
@@ -184,7 +185,7 @@ De eerste ronde concludeerde dat llama.cpp de enige praktische runtime op sm_70 
 | **Qwen3.8 Flash-Next NVFP4 + MTP4** (180B MoE, 512 experts/top-10, 262k native) | 138–150 t/s decode, prefill 5.2–7.1k t/s tot 256k | Kan: 135 GB checkpoint, ~48 GB PLE-tabellen in host-RAM. Vergt ~135 GB vrije schijf (de c4140 heeft er 88). Kwaliteit alleen op kleine samples geaudit. Meest interessante "groter brein"-kandidaat. |
 | **Qwen3.6-35B-A3B NVFP4 + MTP4** (23.5 GB) | 175 t/s, GSM8K 122/128 | Kan, makkelijk. Ouder model, sterk voor veel gelijktijdige gebruikers. |
 | **Qwen3.8-27B FP8** (31 GB) | 51 t/s @128k, 41 t/s @256k (zonder spec) | Kan. Mogelijk iets betere kwaliteit dan NVFP4, maar trager. |
-| **DeepSeek-V4-Flash** | 73.5 t/s, GSM8K 64/64, HumanEval 29/32 | **Niet**: vereist 8× V100 (PP2×TP4). Twee machines op verschillende locaties koppelen via internet is geen optie. |
+| **DeepSeek-V4-Flash** | 73.5 t/s, GSM8K 64/64, HumanEval 29/32 | **Niet** op 1Cat: vereist 8× V100 (PP2×TP4). Twee machines op verschillende locaties koppelen via internet is geen optie. Op één machine kan een model van deze klasse wél via CPU/GPU-expert-offload in llama.cpp, maar geschat op maar ~5–12 t/s voor één gebruiker; zie [MOE-OFFLOAD.md](MOE-OFFLOAD.md). |
 | **GLM-5.3-Flash NVFP4** | 53 t/s | **Niet**: ook 8× V100 (TP4/PP2). |
 
 ## 💡 Belangrijkste lessen
@@ -199,6 +200,17 @@ De eerste ronde concludeerde dat llama.cpp de enige praktische runtime op sm_70 
 8. **Speculatieve decoding maakt snelheid taal- en tekstafhankelijk.** Dezelfde server deed 350–390 t/s op Engelse code en ~97 t/s op Nederlandse proza. Meet met je eigen soort tekst, niet met de demo-prompt van de leverancier.
 9. **Tel tokens, niet stream-chunks.** Bij speculatieve decoding kan één SSE-chunk meerdere geaccepteerde tokens bevatten. Neem `usage.completion_tokens` (`stream_options.include_usage`) als bron — anders meet je een ondergrens (zie de 124 t/s-meting).
 10. **Test met gelijktijdige gebruikers vóór je naar productie gaat.** De volledige single-user-batterij (39/43, 5/5 tot 253k) liet niets zien van de kernel-crash die pas bij 10 gelijktijdige lange prompts optrad. Een officieel "release-profiel" is gevalideerd op het contract van de leverancier, niet op jouw verkeer.
+
+## 🔭 Verkenning: 750B-MoE via expert-offload (niet gemeten)
+
+Naar aanleiding van een demo waarin een ~750B-MoE op één 32 GB-GPU draaide (hot experts in VRAM, de rest door de CPU uit RAM/SSD, ~8 t/s) is op papier doorgerekend wat dezelfde techniek op de c4140 zou doen. **Dit zijn schattingen, geen metingen;** er is bewust besloten het niet te testen.
+
+- Met 128 GB VRAM + 499 GiB RAM past een ~750B-MoE in Q4/Q5 volledig in geheugen. De SSD-trick uit de demo is daardoor overbodig.
+- Decode: geschat **~5–12 t/s** voor één gebruiker, begrensd door de DDR4-bandbreedte over twee NUMA-sockets. Een ~235B-MoE haalt geschat ~25–40 t/s.
+- Prefill is traag (geen AMX, PCIe 3.0) en het schaalt niet naar gelijktijdige gebruikers. ktransformers valt af op sm_70; llama.cpp (`-ot exps=CPU`) werkt wel.
+- **Oordeel:** goed om te weten, maar geen vervanging voor Qwen3.8-27B NVFP4 op 1Cat-vLLM in productie.
+
+Volledige rekensom, kanttekeningen en een testvolgorde voor als het ooit toch gemeten wordt: **[MOE-OFFLOAD.md](MOE-OFFLOAD.md)**.
 
 ## 💾 Hoeveel schijfruimte heb je nodig?
 
