@@ -205,7 +205,7 @@ De eerste ronde concludeerde dat llama.cpp de enige praktische runtime op sm_70 
 
 Naar aanleiding van een demo waarin een ~750B-MoE op één 32 GB-GPU draaide (hot experts in VRAM, de rest door de CPU uit RAM/SSD, ~8 t/s) is op papier doorgerekend wat dezelfde techniek op de c4140 zou doen. **Dit zijn schattingen, geen metingen;** er is bewust besloten het niet te testen.
 
-- Met 128 GB VRAM + 499 GiB RAM past een ~750B-MoE in Q4/Q5 volledig in geheugen. De SSD-trick uit de demo is daardoor overbodig.
+- Met 128 GB VRAM + 448 GB RAM past een ~750B-MoE in Q4/Q5 volledig in geheugen. De SSD-trick uit de demo is daardoor overbodig.
 - Decode: geschat **~5–12 t/s** voor één gebruiker, begrensd door de DDR4-bandbreedte over twee NUMA-sockets. Een ~235B-MoE haalt geschat ~25–40 t/s.
 - Prefill is traag (geen AMX, PCIe 3.0) en het schaalt niet naar gelijktijdige gebruikers. ktransformers valt af op sm_70; llama.cpp (`-ot exps=CPU`) werkt wel.
 - **Oordeel:** goed om te weten, maar geen vervanging voor Qwen3.8-27B NVFP4 op 1Cat-vLLM in productie.
