@@ -1,0 +1,54 @@
+{
+  "single_tool_call": {
+    "trace": [
+      {
+        "tool": null,
+        "args": {},
+        "error": "http_400"
+      }
+    ],
+    "final_content": "",
+    "wall_seconds": 0.02,
+    "correct": false
+  },
+  "chained_tool_calls": {
+    "trace": [
+      {
+        "tool": null,
+        "args": {},
+        "error": "http_400"
+      }
+    ],
+    "final_content": "",
+    "wall_seconds": 0.0,
+    "correct": false
+  },
+  "irrelevant_tool_avoidance": {
+    "trace": [
+      {
+        "tool": null,
+        "args": {},
+        "error": "http_400"
+      }
+    ],
+    "final_content": "",
+    "wall_seconds": 0.0,
+    "correct": false
+  },
+  "multi_entity_tool_use": {
+    "trace": [
+      {
+        "tool": null,
+        "args": {},
+        "error": "http_400"
+      }
+    ],
+    "final_content": "",
+    "wall_seconds": 0.0,
+    "correct": false
+  },
+  "_summary": {
+    "n_correct": 0,
+    "n_total": 4
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "hard_reasoning": {
+    "content": "\n\nPloeg 1: 3 uur × 120 = 360, daarna 5 uur × 90 = 450 → totaal 810  \nPloeg 2: werkt 5 uur, pauze 45 minuten, daarna 2,25 uur → 7,25 uur × 100 = 725  \nPloeg 3: van 10:00 tot 16:00 = 6 uur × 110 = 660  \n\nTotaal: 810 + 725 + 660 = 2195  \n\nEINDANTWOORD: 2195",
+    "wall_seconds": 4.72,
+    "usage": {
+      "prompt_tokens": 288,
+      "total_tokens": 1206,
+      "completion_tokens": 918,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "expected 2195, got 2195"
+  },
+  "hard_coding": {
+    "content": "\n\n```python\nclass Node:\n    __slots__ = (\"key\", \"value\", \"prev\", \"next\")\n\n    def __init__(self, key: int = 0, value: int = 0):\n        self.key = key\n        self.value = value\n        self.prev = None\n        self.next = None\n\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = {}\n        self.head = Node()\n        self.tail = Node()\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _add_node(self, node: Node) -> None:\n        node.prev = self.head\n        node.next = self.head.next\n        self.head.next.prev = node\n        self.head.next = node\n\n    def _remove_node(self, node: Node) -> None:\n        node.prev.next = node.next\n        node.next.prev = node.prev\n\n    def _move_to_front(self, node: Node) -> None:\n        self._remove_node(node)\n        self._add_node(node)\n\n    def _pop_tail(self) -> Node:\n        node = self.tail.prev\n        self._remove_node(node)\n        return node\n\n    def get(self, key: int) -> int:\n        node = self.cache.get(key)\n        if node is None:\n            return -1\n        self._move_to_front(node)\n        return node.value\n\n    def put(self, key: int, value: int) -> None:\n        if self.capacity <= 0:\n            return\n\n        node = self.cache.get(key)\n        if node is not None:\n            node.value = value\n            self._move_to_front(node)\n            return\n\n        if len(self.cache) >= self.capacity:\n            lru = self._pop_tail()\n            del self.cache[lru.key]\n\n        new_node = Node(key, value)\n        self._add_node(new_node)\n        self.cache[key] = new_node\n```",
+    "wall_seconds": 2.95,
+    "usage": {
+      "prompt_tokens": 218,
+      "total_tokens": 1116,
+      "completion_tokens": 898,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "has LRUCache=True, OrderedDict=False, get/put=True/True"
+  },
+  "scribr_notulen": {
+    "content": "## Besluiten\n*   **Begrotingswijziging zwembad:** Het voorstel om nu 200.000 euro vrij te maken uit de algemene reserve voor de extra kosten van de zwembadrenovatie is aangenomen (6 stemmen voor, 1 tegen).\n*   **Voorwaarde zwembad:** Als de aanvraag voor de provinciale subsidie (voor de resterende 140.000 euro) wordt afgewezen, moet er een nieuw raadsvoorstel worden ingediend in plaats van automatisch bijstorten uit de reserve.\n*   **Bestemmingsplan Noorderpark:** Er wordt voorlopig **geen** besluit genomen over het herziene bestemmingsplan (120 woningen, 40% sociale huur).\n*   **Verkeerstoets:** De raad stemt in met het uitvoeren van een onafhankelijke verkeerstoets voordat er definitief wordt besloten over het bestemmingsplan.\n\n## Actiepunten (met wie verantwoordelijk is)\n*   **Wethouder Bakker (Financien):** Zorgt dat het raadsvoorstel voor de resterende 140.000 euro (afhankelijk van de subsidie-uitslag) uiterlijk in de raadsvergadering van juli wordt geagendeerd.\n*   **Wethouder Smit (Ruimtelijke Ordening):** Laat een onafhankelijke verkeerstoets uitvoeren voor het bestemmingsplan Noorderpark en koppelt de resultaten terug in de vergadering van mei.\n*   **Burgemeester De Groot:** Vraagt de status van de fietsbrug bij het station na bij de projectleider en koppelt dit terug in de volgende vergadering.\n*   **Voorzitter / Gemeente:** Doet de klacht over geluidsoverlast van een lokaal bedrijf door naar de wethouder Handhaving (die niet aanwezig was).\n\n## Openstaande vragen\n*   Hoe wordt de parkeerdruk opgevangen als het geplande deelauto-concept niet voldoende blijkt?\n*   Wat is de exacte status van de fietsbrug bij het station (verwacht klaar in september)?\n*   Wat is de uitslag van de aanvraag voor de provinciale subsidie voor het zwembad (verwacht in juni)?",
+    "wall_seconds": 2.47,
+    "usage": {
+      "prompt_tokens": 1134,
+      "total_tokens": 1656,
+      "completion_tokens": 522,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "headers present: ## Besluiten, ## Actiepunten, ## Openstaande vragen"
+  },
+  "strict_instructions": {
+    "content": "{\n  \"samenvatting\": \"Temperatuurafwijking op lijn drie veroorzaakte twaalf afkeuringen. Defecte sensor vervangen. Geen klantproducten verzonden. Risico beperkt tot interne afval.\",\n  \"kernwoorden\": [\n    \"temperatuurafwijking\",\n    \"sensor\",\n    \"afkeuring\",\n    \"lijn\",\n    \"kwaliteitscontrole\"\n  ],\n  \"risico_score\": 0.35,\n  \"vereist_escalatie\": false\n}",
+    "wall_seconds": 0.88,
+    "usage": {
+      "prompt_tokens": 235,
+      "total_tokens": 362,
+      "completion_tokens": 127,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "valid JSON, keys=True, word_limit=True"
+  },
+  "_summary": {
+    "n_correct": 4,
+    "n_total": 4
+  }
+}

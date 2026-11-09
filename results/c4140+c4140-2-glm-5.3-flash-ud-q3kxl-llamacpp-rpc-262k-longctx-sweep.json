@@ -1,0 +1,235 @@
+{
+  "model": "glm-5.3-flash",
+  "sizes": [
+    {
+      "ctx_requested": 8192,
+      "prompt_tokens": 10289,
+      "completion_tokens": 291,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro, te besteden over drie kwartalen.\n\nANTWOORD 2: De controleaanduiding op positie 25% is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding op positie 50% is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding op positie 75% is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 64.29,
+      "prefill_tps": 229.92,
+      "decode_tps": 15.03,
+      "peak_vram_mb": [
+        27676,
+        30840,
+        27668,
+        22506
+      ]
+    },
+    {
+      "ctx_requested": 32768,
+      "prompt_tokens": 39386,
+      "completion_tokens": 285,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro, te besteden over drie kwartalen.\n\nANTWOORD 2: De controleaanduiding op positie 25% is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding op positie 50% is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding op positie 75% is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 243.16,
+      "prefill_tps": 177.22,
+      "decode_tps": 13.85,
+      "peak_vram_mb": [
+        27676,
+        30840,
+        27668,
+        22506
+      ]
+    },
+    {
+      "ctx_requested": 65536,
+      "prompt_tokens": 77978,
+      "completion_tokens": 286,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro, te besteden over drie kwartalen.\n\nANTWOORD 2: De controleaanduiding op positie 25% is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding op positie 50% is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding op positie 75% is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 619.23,
+      "prefill_tps": 131.05,
+      "decode_tps": 12.18,
+      "peak_vram_mb": [
+        27676,
+        30840,
+        27668,
+        22506
+      ]
+    },
+    {
+      "ctx_requested": 131072,
+      "prompt_tokens": 155339,
+      "completion_tokens": 287,
+      "content": "ANTWOORD 1: Het nieuwe ERP-project heeft projectreferentie PRJ-2247 en een vastgesteld budget van 487.300 euro, te besteden over drie kwartalen.\n\nANTWOORD 2: De controleaanduiding op positie 25% is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding op positie 50% is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding op positie 75% is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 1853.88,
+      "prefill_tps": 85.13,
+      "decode_tps": 10.24,
+      "peak_vram_mb": [
+        27676,
+        30840,
+        27668,
+        22506
+      ]
+    },
+    {
+      "ctx_requested": 212000,
+      "prompt_tokens": 252600,
+      "completion_tokens": 296,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro, te besteden over drie kwartalen.\n\nANTWOORD 2: De controleaanduiding op positie 25% is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding op positie 50% is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding op positie 75% is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 4355.29,
+      "prefill_tps": 58.48,
+      "decode_tps": 8.23,
+      "peak_vram_mb": [
+        27676,
+        30840,
+        27668,
+        22506
+      ]
+    }
+  ]
+}

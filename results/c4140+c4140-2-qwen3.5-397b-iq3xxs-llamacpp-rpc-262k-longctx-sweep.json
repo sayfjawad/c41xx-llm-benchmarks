@@ -1,0 +1,235 @@
+{
+  "model": "qwen3.5-397b",
+  "sizes": [
+    {
+      "ctx_requested": 8192,
+      "prompt_tokens": 10060,
+      "completion_tokens": 1633,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het vastgestelde budget bedraagt 487.300 euro.\n\nANTWOORD 2: De controleaanduiding die bij kwaliteitsregistratie op positie 25% wordt genoemd, is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding die bij kwaliteitsregistratie op positie 50% wordt genoemd, is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding die bij kwaliteitsregistratie op positie 75% wordt genoemd, is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding die bij kwaliteitsregistratie op positie 100% wordt genoemd, is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 116.56,
+      "prefill_tps": 191.45,
+      "decode_tps": 25.65,
+      "peak_vram_mb": [
+        28336,
+        28336,
+        28080,
+        25402
+      ]
+    },
+    {
+      "ctx_requested": 32768,
+      "prompt_tokens": 38346,
+      "completion_tokens": 1662,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro.\n\nANTWOORD 2: De controleaanduiding die bij kwaliteitsregistratie op positie 25% wordt genoemd is RK-93810-214.\n\nANTWOORD 3: De controleaanduiding die bij kwaliteitsregistratie op positie 50% wordt genoemd is RK-13278-859.\n\nANTWOORD 4: De controleaanduiding die bij kwaliteitsregistratie op positie 75% wordt genoemd is RK-46048-350.\n\nANTWOORD 5: De controleaanduiding die bij kwaliteitsregistratie op positie 100% wordt genoemd is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 304.46,
+      "prefill_tps": 165.12,
+      "decode_tps": 23.19,
+      "peak_vram_mb": [
+        28336,
+        28336,
+        28080,
+        25402
+      ]
+    },
+    {
+      "ctx_requested": 65536,
+      "prompt_tokens": 75981,
+      "completion_tokens": 1419,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro.\nANTWOORD 2: De controleaanduiding bij kwaliteitsregistratie op positie 25% is RK-93810-214.\nANTWOORD 3: De controleaanduiding bij kwaliteitsregistratie op positie 50% is RK-13278-859.\nANTWOORD 4: De controleaanduiding bij kwaliteitsregistratie op positie 75% is RK-46048-350.\nANTWOORD 5: De controleaanduiding bij kwaliteitsregistratie op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 606.5,
+      "prefill_tps": 141.46,
+      "decode_tps": 20.81,
+      "peak_vram_mb": [
+        28336,
+        28336,
+        28080,
+        25402
+      ]
+    },
+    {
+      "ctx_requested": 131072,
+      "prompt_tokens": 151187,
+      "completion_tokens": 1521,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro.\nANTWOORD 2: De controleaanduiding bij kwaliteitsregistratie op positie 25% is RK-93810-214.\nANTWOORD 3: De controleaanduiding bij kwaliteitsregistratie op positie 50% is RK-13278-859.\nANTWOORD 4: De controleaanduiding bij kwaliteitsregistratie op positie 75% is RK-46048-350.\nANTWOORD 5: De controleaanduiding bij kwaliteitsregistratie op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 1467.97,
+      "prefill_tps": 109.81,
+      "decode_tps": 17.06,
+      "peak_vram_mb": [
+        28336,
+        28336,
+        28080,
+        25402
+      ]
+    },
+    {
+      "ctx_requested": 220000,
+      "prompt_tokens": 253119,
+      "completion_tokens": 1396,
+      "content": "ANTWOORD 1: De projectreferentie is PRJ-2247 en het toegekende budget bedraagt 487.300 euro.\nANTWOORD 2: De controleaanduiding voor kwaliteitsregistratie op positie 25% is RK-93810-214.\nANTWOORD 3: De controleaanduiding voor kwaliteitsregistratie op positie 50% is RK-13278-859.\nANTWOORD 4: De controleaanduiding voor kwaliteitsregistratie op positie 75% is RK-46048-350.\nANTWOORD 5: De controleaanduiding voor kwaliteitsregistratie op positie 100% is RK-39256-242.",
+      "status": "ok",
+      "failure_mode": null,
+      "score": 5,
+      "n_needles": 5,
+      "needles": [
+        {
+          "q": 1,
+          "positie": "0%",
+          "ok": true
+        },
+        {
+          "q": 2,
+          "positie": "25%",
+          "ok": true
+        },
+        {
+          "q": 3,
+          "positie": "50%",
+          "ok": true
+        },
+        {
+          "q": 4,
+          "positie": "75%",
+          "ok": true
+        },
+        {
+          "q": 5,
+          "positie": "100%",
+          "ok": true
+        }
+      ],
+      "wall_seconds": 2925.86,
+      "prefill_tps": 89.74,
+      "decode_tps": 13.73,
+      "peak_vram_mb": [
+        28336,
+        28336,
+        28080,
+        25402
+      ]
+    }
+  ]
+}

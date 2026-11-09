@@ -36,7 +36,8 @@ De crux zit in de **KV-cache-geometrie**, niet in modelkwaliteit: een dense 70B/
 4. [Resultaten in één tabel](#-resultaten-in-één-tabel)
 5. [Het verhaal](#-het-verhaal)
 6. [Belangrijkste lessen](#-belangrijkste-lessen)
-7. [Verkenning: 750B-MoE via expert-offload (niet gemeten)](#-verkenning-750b-moe-via-expert-offload-niet-gemeten)
+7. [Hoofdstuk 3: c4140 en c4140-2](#️️-hoofdstuk-3-c4140-en-c4140-2-single-node-en-twee-nodes)
+8. [Verkenning: 750B-MoE via expert-offload (niet gemeten)](#-verkenning-750b-moe-via-expert-offload-niet-gemeten)
 8. [Hoeveel schijfruimte heb je nodig?](#-hoeveel-schijfruimte-heb-je-nodig)
 9. [Zelf reproduceren](#-zelf-reproduceren)
 10. [Bronnen](#-bronnen)
@@ -200,6 +201,20 @@ De eerste ronde concludeerde dat llama.cpp de enige praktische runtime op sm_70 
 8. **Speculatieve decoding maakt snelheid taal- en tekstafhankelijk.** Dezelfde server deed 350–390 t/s op Engelse code en ~97 t/s op Nederlandse proza. Meet met je eigen soort tekst, niet met de demo-prompt van de leverancier.
 9. **Tel tokens, niet stream-chunks.** Bij speculatieve decoding kan één SSE-chunk meerdere geaccepteerde tokens bevatten. Neem `usage.completion_tokens` (`stream_options.include_usage`) als bron — anders meet je een ondergrens (zie de 124 t/s-meting).
 10. **Test met gelijktijdige gebruikers vóór je naar productie gaat.** De volledige single-user-batterij (39/43, 5/5 tot 253k) liet niets zien van de kernel-crash die pas bij 10 gelijktijdige lange prompts optrad. Een officieel "release-profiel" is gevalideerd op het contract van de leverancier, niet op jouw verkeer.
+
+## 🖥️🖥️ Hoofdstuk 3: c4140 en c4140-2, single-node en twee nodes
+
+Twee extra Dell PowerEdge C4140's (c4140: 4×V100-32GB, c4140-2: 4×V100-16GB) met een directe 100 GbE-link, getest met dezelfde batterij en een **harde eis van ≥262k context**. Volledig verslag, hardware, link-metingen, scripts en lessen: **[C4140-NODES.md](C4140-NODES.md)**.
+
+| Configuratie | Zware | Long-ctx | Betrouwb. | Tools | Kennis | Rekenen | 5/5 tot | Decode t/s |
+|---|---|---|---|---|---|---|---|---|
+| **c4140:** Qwen3.8-Flash-Next NVFP4 + MTP4 (180B MoE), 1Cat | 4/4 | 6/6 | 5/5 | 4/4 | 12/14 | 10/10 | 253k | **~110–125** (340 totaal bij 8 gebruikers) |
+| **c4140-2:** Qwen3.8-27B NVFP4, 1Cat (16GB-GPU's) | 4/4 | 6/6 | 5/5 | 4/4 | 11/14 | 10/10 | 253k | ~100 |
+| 2 nodes: Qwen3.5-397B IQ3_XXS, llama.cpp RPC | 4/4 | 6/6 | 5/5 | 4/4 | 12/14 | 10/10 | 253k | 14–26 |
+| 2 nodes: GLM-5.3-Flash Q3_K_XL (147 GB), llama.cpp RPC | 4/4 | 6/6 | 4/5 | 4/4 | 12/14 | 10/10 | 252k | 8–15 |
+| 2 nodes: Qwen3.8-27B, 1Cat PP2×TP4 (64k) | 4/4 | 6/6 | 5/5 | 4/4 | 11/14 | 10/10 | 58k | 41–51 |
+
+**Conclusie:** bij een eis van 262k context is **één c4140 met Flash-Next** de beste verhouding tussen kwaliteit en snelheid. Twee nodes maken grotere modellen mogelijk (397B, GLM-5.3), maar kosten ~8× aan decode-snelheid bij gelijke kwaliteit. 1Cat werkt over twee nodes via RoCE (NCCL 11,7 GB/s busbw, alleen met een image dat `libibverbs` bevat), maar is voor modellen die op één node passen 15% trager in decode.
 
 ## 🔭 Verkenning: 750B-MoE via expert-offload (niet gemeten)
 

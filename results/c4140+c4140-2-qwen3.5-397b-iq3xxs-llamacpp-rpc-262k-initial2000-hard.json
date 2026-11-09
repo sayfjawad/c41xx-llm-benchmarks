@@ -1,0 +1,66 @@
+{
+  "hard_reasoning": {
+    "content": "Hier is de stap-voor-stap berekening van het totaal aantal verwerkte pakketten:\n\n**Stap 1: Bereken het aantal pakketten van Ploeg 1**\nPloeg 1 werkt van 08:00 tot 16:00 (totaal 8 uur).\n- De eerste 3 uur (08:00 - 11:00): 3 uur × 120 pakketten/uur = 360 pakketten.\n- De resterende tijd (11:00 - 16:00) is 5 uur: 5 uur × 90 pakketten/uur = 450 pakketten.\n- Totaal Ploeg 1: 360 + 450 = 810 pakketten.\n\n**Stap 2: Bereken het aantal pakketten van Ploeg 2**\nPloeg 2 werkt van 08:00 tot 16:00, maar heeft een pauze.\n- Totale tijdsduur: 8 uur.\n- Pauze: 45 minuten = 0,75 uur.\n- Effectieve werktijd: 8 uur - 0,75 uur = 7,25 uur.\n- Snelheid: 100 pakketten per uur.\n- Totaal Ploeg 2: 7,25 uur × 100 pakketten/uur = 725 pakketten.\n\n**Stap 3: Bereken het aantal pakketten van Ploeg 3**\nPloeg 3 werkt van 10:00 tot 16:00.\n- Tijdsduur: 6 uur.\n- Snelheid: 110 pakketten per uur.\n- Totaal Ploeg 3: 6 uur × 110 pakketten/uur = 660 pakketten.\n\n**Stap 4: Bereken het totaal aantal pakketten**\n- Totaal = Ploeg 1 + Ploeg 2 + Ploeg 3\n- Totaal = 810 + 725 + 660\n- Totaal = 2195 pakketten.\n\nEINDANTWOORD: 2195",
+    "wall_seconds": 110.13,
+    "usage": {
+      "completion_tokens": 2828,
+      "prompt_tokens": 246,
+      "total_tokens": 3074,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.219081076762663,
+    "correct": true,
+    "score_note": "expected 2195, got 2195"
+  },
+  "hard_coding": {
+    "content": "",
+    "wall_seconds": 115.91,
+    "usage": {
+      "completion_tokens": 3000,
+      "prompt_tokens": 176,
+      "total_tokens": 3176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.321374006266105,
+    "correct": false,
+    "score_note": "has LRUCache=False, OrderedDict=False, get/put=False/False"
+  },
+  "scribr_notulen": {
+    "content": "## Besluiten\n*   Er is 200.000 euro vrijgemaakt uit de algemene reserve voor de begrotingswijziging van het zwembad.\n*   Er is vastgesteld dat er pas in juni een besluit wordt genomen over de resterende 140.000 euro voor het zwembad, na de uitslag van de subsidieaanvraag.\n*   Het is vastgelegd dat bij afwijzing van de subsidie een nieuw raadsvoorstel nodig is in plaats van een automatische bijstorting uit de reserve.\n*   Het voorstel voor de gefaseerde financiering van het zwembad is aangenomen met 6 stemmen voor en 1 tegen.\n*   Er is geen besluit genomen over het bestemmingsplan Noorderpark; dit wordt uitgesteld tot na de uitvoering van een verkeerstoets.\n*   De agenda en de volgorde van behandeling zijn vastgesteld aan het begin van de vergadering.\n\n## Actiepunten (met wie verantwoordelijk is)\n*   **Wethouder Bakker:** Zorgt dat het raadsvoorstel voor de resterende 140.000 euro (voor het zwembad) uiterlijk op de agenda van de raadsvergadering in juli staat, ongeacht de uitkomst van de subsidie.\n*   **Wethouder Smit:** Laat een onafhankelijke verkeerstoets uitvoeren voor het bestemmingsplan Noorderpark en koppelt de resultaten terug in de vergadering van mei.\n*   **Burgemeester De Groot:** Vraagt de status van de fietsbrug bij het station na bij de projectleider en koppelt dit terug in de volgende vergadering.\n*   **Voorzitter/Burgemeester:** Zet de klacht over geluidsoverlast van een lokaal bedrijf door naar de wethouder Handhaving (die niet aanwezig was).\n\n## Openstaande vragen\n*   Wat is de definitieve uitkomst van de provinciale subsidieaanvraag voor het zwembad (verwacht in juni)?\n*   Hoe wordt de parkeerdruk in Noorderpark opgevangen als het voorgestelde deelauto-concept niet voldoende blijkt te werken?\n*   Wat is de actuele status en de nieuwe verwachte opleverdatum van de fietsbrug bij het station?\n*   Hoe zal de wethouder Handhaving invulling geven aan de handhaving rondom de gemelde geluidsoverlast?",
+    "wall_seconds": 27.59,
+    "usage": {
+      "completion_tokens": 555,
+      "prompt_tokens": 1134,
+      "total_tokens": 1689,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.627667867619348,
+    "correct": true,
+    "score_note": "headers present: ## Besluiten, ## Actiepunten, ## Openstaande vragen"
+  },
+  "strict_instructions": {
+    "content": "{\"samenvatting\":\"Lijn 3 had temperatuurafwijking door defecte sensor; twaalf eenheden afgekeurd, geen verzending naar klanten, sensor is vervangen.\",\"kernwoorden\":[\"temperatuurafwijking\",\"sensor\",\"afgekeurd\",\"lijn 3\",\"productie\"],\"risico_score\":0.35,\"vereist_escalatie\":false}",
+    "wall_seconds": 5.21,
+    "usage": {
+      "completion_tokens": 85,
+      "prompt_tokens": 235,
+      "total_tokens": 320,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 27.91018502459087,
+    "correct": true,
+    "score_note": "valid JSON, keys=True, word_limit=True"
+  },
+  "_summary": {
+    "n_correct": 3,
+    "n_total": 4
+  }
+}

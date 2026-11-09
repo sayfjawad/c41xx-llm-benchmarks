@@ -1,0 +1,13 @@
+{
+  "content": "\n\nANTWOORD 1: Het toegekende budget voor ERP-project PRJ-2247 is 487.300 euro. Dit budget dekt uitdrukkelijk geen maatwerk-koppelingen met externe klantsystemen.\n\nANTWOORD 2: Fatima El Ouazzani wordt per 1 september de nieuwe hoofd Inkoop. De vertrekkende voorganger is Robert Dijkhuis.\n\nANTWOORD 3: De deadline voor de CRM-migratie is 15 november. Als die deadline niet wordt gehaald, vervalt de korting van 12 procent op de licentiekosten volledig.\n\nANTWOORD 4: Het ziekteverzuim is gedaald met 2,5 procentpunt. Het is gedaald van 6,8 procent naar 4,3 procent.\n\nANTWOORD 5: Het voorstel voor de nieuwe kantoorlocatie Utrecht is aangenomen met 9 stemmen voor en 3 tegen. De voorwaarde is dat de huurovereenkomst niet langer dan 5 jaar mag lopen.\n\nANTWOORD 6: Bas Kremer is actiehouder voor de juridische toets van het huurcontract. De deadline is 20 december.\n\nTOTAALSAMENVATTING\n- ERP-project PRJ-2247 heeft een budget van 487.300 euro, exclusief maatwerk-koppelingen met externe klantsystemen.\n- Fatima El Ouazzani volgt per 1 september Robert Dijkhuis op als hoofd Inkoop.\n- De CRM-migratie moet uiterlijk 15 november klaar zijn om de korting van 12 procent op licentiekosten te behouden.\n- Het ziekteverzuim daalde door het hybride werkbeleid met 2,5 procentpunt, van 6,8 procent naar 4,3 procent.\n- De Utrechtse kantoorlocatie aan de Overste den Oudenlaan is met 9 tegen 3 aangenomen, mits de huurloop maximaal 5 jaar is; Bas Kremer moet de juridische toets uiterlijk 20 december afronden.",
+  "usage": {
+    "prompt_tokens": 10042,
+    "total_tokens": 11619,
+    "completion_tokens": 1577,
+    "prompt_tokens_details": null
+  },
+  "timings": {},
+  "wall_seconds": 9.17,
+  "score": 6,
+  "n_needles": 6
+}

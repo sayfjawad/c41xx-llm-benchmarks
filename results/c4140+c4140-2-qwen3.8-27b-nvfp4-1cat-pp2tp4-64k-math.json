@@ -1,0 +1,96 @@
+{
+  "stap_korting": {
+    "question": "Een winkel past na elkaar drie kortingen toe op een product van 250 euro: eerst 20% korting, dan nog eens 10% korting op het resterende bedrag, en tot slot een vaste korting van 15 euro. Wat is de einprijs? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <bedrag>'.",
+    "answer": "Eerste korting: 20% van 250 euro = 50 euro  \nNieuw bedrag: 250 - 50 = 200 euro  \n\nTweede korting: 10% van 200 euro = 20 euro  \nNieuw bedrag: 200 - 20 = 180 euro  \n\nDerde korting: vaste korting van 15 euro  \nEindbedrag: 180 - 15 = 165 euro  \n\nEINDANTWOORD: 165 euro",
+    "predicted_answer": "165 euro",
+    "expected_answer": "165 euro",
+    "correct": true,
+    "wall_seconds": 6.43,
+    "completion_tokens": 323
+  },
+  "logica_ridders": {
+    "question": "Op een eiland zijn er Ridders (spreken altijd de waarheid) en Schurken (liegen altijd). Je ontmoet A en B. A zegt: 'B is een schurk.' B zegt: 'A en ik zijn beiden ridders.' Wat zijn A en B? Redeneer stap voor stap en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: A=..., B=...'.",
+    "answer": "Stap 1: Neem aan dat A een Ridder is.  \n- Dan is A’s uitspraak waar: “B is een schurk.”  \n- Dus B is een schurk.  \n- B zegt: “A en ik zijn beiden ridders.” Omdat B een schurk is, moet deze uitspraak onwaar zijn.  \n- Inderdaad: A is een ridder, maar B is geen ridder, dus “beiden ridders” is onwaar.  \n- Dit is consistent.\n\nStap 2: Neem aan dat A een Schurk is.  \n- Dan is A’s uitspraak onwaar: “B is een schurk” is onwaar.  \n- Dus B is geen schurk, dus B is een ridder.  \n- B zegt: “A en ik zijn beiden ridders.” Omdat B een ridder is, moet deze uitspraak waar zijn.  \n- Maar A is in deze aanname een schurk, dus “beiden ridders” is onwaar.  \n- Dit is een tegenstrijdigheid.\n\nDus de enige mogelijke oplossing is: A is een ridder en B is een schurk.\n\nEINDANTWOORD: A=Ridder, B=Schurk",
+    "predicted_answer": "a=ridder, b=schurk",
+    "expected_answer": "A=ridder, B=schurk",
+    "correct": true,
+    "wall_seconds": 9.37,
+    "completion_tokens": 473
+  },
+  "kans_dobbelsteen": {
+    "question": "Je gooit twee eerlijke dobbelstenen. Wat is de kans dat de som van de ogen precies 7 is? Geef het antwoord als breuk EN als percentage, op de laatste regel als 'EINDANTWOORD: <breuk> = <percentage>%'.",
+    "answer": "Er zijn 36 mogelijke uitkomsten en 6 gunstige uitkomsten voor som 7.\n\nKans = 6/36 = 1/6 ≈ 16,67%\n\nEINDANTWOORD: 1/6 = 16,67%",
+    "predicted_answer": "1/6 = 16,67%",
+    "expected_answer": "1/6",
+    "correct": true,
+    "wall_seconds": 8.63,
+    "completion_tokens": 437
+  },
+  "combinatoriek": {
+    "question": "Op hoeveel manieren kunnen 5 verschillende boeken worden verdeeld over 3 verschillende personen, als elke persoon minstens 1 boek moet krijgen? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We tellen het aantal manieren om 5 verschillende boeken te verdelen over 3 verschillende personen, waarbij elke persoon minstens 1 boek krijgt.\n\nDit is het aantal surjectieve (op alle personen afbeeldende) verdelingen. We kunnen dit tellen met de inclusie-exclusie:\n\n- Totaal aantal verdelingen zonder beperking:  \n  \\[\n  3^5 = 243\n  \\]\n\n- Trek af de verdelingen waarbij minstens 1 persoon niets krijgt:  \n  Kies de persoon die niets krijgt: \\(\\binom{3}{1}=3\\) manieren.  \n  De 5 boeken gaan dan naar de overige 2 personen: \\(2^5=32\\) manieren.  \n  \\[\n  3 \\cdot 32 = 96\n  \\]\n\n- Tel terug de verdelingen waarbij 2 personen niets krijgen, omdat die dubbel zijn afgetrokken:  \n  Kies de 2 personen die niets krijgen: \\(\\binom{3}{2}=3\\) manieren.  \n  Alle 5 boeken gaan dan naar de 1 overgebleven persoon: \\(1^5=1\\) manier.  \n  \\[\n  3 \\cdot 1 = 3\n  \\]\n\nDus het aantal geldige verdelingen is:\n\\[\n3^5 - \\binom{3}{1}2^5 + \\binom{3}{2}1^5\n= 243 - 96 + 3\n= 150\n\\]\n\nEINDANTWOORD: 150",
+    "predicted_answer": "150",
+    "expected_answer": "150",
+    "correct": true,
+    "wall_seconds": 12.68,
+    "completion_tokens": 643
+  },
+  "algebra": {
+    "question": "Twee getallen hebben een som van 47 en een verschil van 13. Wat zijn de twee getallen? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <groot getal> en <klein getal>'.",
+    "answer": "De twee getallen zijn 30 en 17.\n\nEINDANTWOORD: 30 en 17",
+    "predicted_answer": "30 en 17",
+    "expected_answer": "30 en 17",
+    "correct": true,
+    "wall_seconds": 2.28,
+    "completion_tokens": 113
+  },
+  "getaltheorie": {
+    "question": "Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "1000 = 10³ = 2³ · 5³.\n\nVoor n! moet dus gelden:\n- minstens 3 factoren 2,\n- minstens 3 factoren 5.\n\nFactoren 5 zijn zeldzamer, dus we tellen het aantal factoren 5 in n!:\n\n- 9! heeft 1 factor 5 (uit 5)\n- 10! heeft 2 factoren 5 (uit 5 en 10)\n- 14! heeft nog steeds 2 factoren 5\n- 15! heeft 3 factoren 5 (uit 5, 10 en 15)\n\nDe factoren 2 zijn in 15! ruim voldoende aanwezig.\n\nDus de kleinste n is 15.\n\nEINDANTWOORD: 15",
+    "predicted_answer": "15",
+    "expected_answer": "15",
+    "correct": true,
+    "wall_seconds": 8.05,
+    "completion_tokens": 407
+  },
+  "meetkunde": {
+    "question": "Een rechthoekige driehoek heeft een hypotenusa van 13 cm en een rechthoekszijde van 5 cm. Wat is de oppervlakte van de driehoek? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> cm2'.",
+    "answer": "De andere rechthoekszijde is:\n\n\\[\n\\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12 \\text{ cm}\n\\]\n\nDe oppervlakte is:\n\n\\[\n\\frac{1}{2} \\cdot 5 \\cdot 12 = 30 \\text{ cm}^2\n\\]\n\nEINDANTWOORD: 30 cm2",
+    "predicted_answer": "30 cm2",
+    "expected_answer": "30 cm2",
+    "correct": true,
+    "wall_seconds": 4.82,
+    "completion_tokens": 242
+  },
+  "rente": {
+    "question": "Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Het bedrag na \\(n\\) volle jaren is:\n\n\\[\n1000 \\cdot (1{,}04)^n\n\\]\n\nWe willen dat dit meer dan verdubbeld is:\n\n\\[\n1000 \\cdot (1{,}04)^n > 2000\n\\]\n\n\\[\n(1{,}04)^n > 2\n\\]\n\nNeem de natuurlijke logaritme:\n\n\\[\nn \\cdot \\ln(1{,}04) > \\ln(2)\n\\]\n\n\\[\nn > \\frac{\\ln(2)}{\\ln(1{,}04)}\n\\]\n\n\\[\nn > \\frac{0{,}693147}{0{,}039221} \\approx 17{,}67\n\\]\n\nOmdat het om volle jaren gaat, moet \\(n\\) minimaal 18 zijn.\n\nEINDANTWOORD: 18 jaar",
+    "predicted_answer": "18 jaar",
+    "expected_answer": "18 jaar",
+    "correct": true,
+    "wall_seconds": 12.77,
+    "completion_tokens": 647
+  },
+  "valstrik_schapen": {
+    "question": "Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "Hij heeft nog 17 schapen, want dode schapen zijn nog steeds schapen.\n\nEINDANTWOORD: 17",
+    "predicted_answer": "17",
+    "expected_answer": "1 schaap",
+    "correct": true,
+    "wall_seconds": 24.25,
+    "completion_tokens": 1230
+  },
+  "valstrik_caesar": {
+    "question": "Julius Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr. Hoe oud was hij toen hij stierf? Let goed op of zijn verjaardag dat jaar al was geweest. Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Julius Caesar werd geboren in **juli 100 v.Chr.** en stierf op **15 maart 44 v.Chr.**\n\nVan 100 v.Chr. tot 44 v.Chr. zijn er kalendermatig 56 jaar verstreken, maar zijn verjaardag in 44 v.Chr. viel in juli. Hij stierf in maart, dus vóór zijn verjaardag dat jaar.\n\nDaarom had hij in 44 v.Chr. nog niet zijn 56e verjaardag gevierd, maar was hij nog 55 jaar.\n\nEINDANTWOORD: 55 jaar",
+    "predicted_answer": "55 jaar",
+    "expected_answer": "55 jaar",
+    "correct": true,
+    "wall_seconds": 14.73,
+    "completion_tokens": 745
+  },
+  "_summary": {
+    "n_correct": 10,
+    "n_total": 10
+  }
+}

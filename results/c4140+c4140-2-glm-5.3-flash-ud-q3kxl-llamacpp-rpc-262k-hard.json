@@ -1,0 +1,66 @@
+{
+  "hard_reasoning": {
+    "content": "# Stap voor stap oplossen\n\n## Ploeg 1\n- Werkt van 08:00 tot 16:00 = 8 uur totaal\n- Eerste 3 uur: 120 pakketten/uur → 3 × 120 = **360 pakketten**\n- Resterende tijd: 8 − 3 = 5 uur tegen 90 pakketten/uur → 5 × 90 = **450 pakketten**\n- Totaal Ploeg 1: 360 + 450 = **810 pakketten**\n\n## Ploeg 2\n- Werkt van 08:00 tot 16:00 = 8 uur, maar met een pauze van 45 minuten (0,75 uur)\n- Effectieve werktijd: 8 − 0,75 = 7,25 uur\n- Snelheid: 100 pakketten/uur → 7,25 × 100 = **725 pakketten**\n\n## Ploeg 3\n- Begint om 10:00 en werkt tot 16:00 = 6 uur\n- Snelheid: 110 pakketten/uur → 6 × 110 = **660 pakketten**\n\n## Totaal\n810 + 725 + 660 = **2195 pakketten**\n\nEINDANTWOORD: 2195",
+    "wall_seconds": 45.44,
+    "usage": {
+      "completion_tokens": 622,
+      "prompt_tokens": 244,
+      "total_tokens": 866,
+      "prompt_tokens_details": {
+        "cached_tokens": 9
+      }
+    },
+    "predicted_per_second": 14.323194464465908,
+    "correct": true,
+    "score_note": "expected 2195, got 2195"
+  },
+  "hard_coding": {
+    "content": "```python\nclass LRUCache:\n    class _Node:\n        __slots__ = (\"key\", \"value\", \"prev\", \"next\")\n\n        def __init__(self, key: int = 0, value: int = 0):\n            self.key = key\n            self.value = value\n            self.prev = None\n            self.next = None\n\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.map = {}\n        self.head = self._Node()\n        self.tail = self._Node()\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _remove(self, node: \"_Node\") -> None:\n        node.prev.next = node.next\n        node.next.prev = node.prev\n\n    def _add_front(self, node: \"_Node\") -> None:\n        node.next = self.head.next\n        node.prev = self.head\n        self.head.next.prev = node\n        self.head.next = node\n\n    def get(self, key: int) -> int:\n        node = self.map.get(key)\n        if node is None:\n            return -1\n        self._remove(node)\n        self._add_front(node)\n        return node.value\n\n    def put(self, key: int, value: int) -> None:\n        node = self.map.get(key)\n        if node is not None:\n            node.value = value\n            self._remove(node)\n            self._add_front(node)\n            return\n        if len(self.map) >= self.capacity:\n            lru = self.tail.prev\n            self._remove(lru)\n            del self.map[lru.key]\n        new_node = self._Node(key, value)\n        self.map[key] = new_node\n        self._add_front(new_node)\n```",
+    "wall_seconds": 71.36,
+    "usage": {
+      "completion_tokens": 1036,
+      "prompt_tokens": 180,
+      "total_tokens": 1216,
+      "prompt_tokens_details": {
+        "cached_tokens": 9
+      }
+    },
+    "predicted_per_second": 14.893006483019251,
+    "correct": true,
+    "score_note": "has LRUCache=True, OrderedDict=False, get/put=True/True"
+  },
+  "scribr_notulen": {
+    "content": "## Besluiten\n- Agenda vastgesteld met drie punten: begrotingswijziging zwembad, bestemmingsplan Noorderpark en rondvraag.\n- Begrotingswijziging zwembad aangenomen met 6 stemmen voor, 1 tegen (Dijkstra, die het hele project heroverwogen wil zien): 200.000 euro wordt nu vrijgemaakt uit de algemene reserve; over de resterende 140.000 euro wordt beslist na de subsidie-uitslag in juni. Harde voorwaarde (El Amrani): bij afwijzing van de provinciale subsidie komt er een nieuw raadsvoorstel, geen automatische bijstorting uit de reserve.\n- Besluit over het bestemmingsplan Noorderpark (120 woningen, waarvan 40% sociale huur) uitgesteld: eerst een onafhankelijke verkeerstoets, resultaten worden in mei aan de raad teruggekoppeld.\n\n## Actiepunten (met wie verantwoordelijk is)\n- **Wethouder Bakker:** agendeert het raadsvoorstel voor de resterende 140.000 euro uiterlijk in de raadsvergadering van juli, ongeacht de uitkomst van de subsidieaanvraag.\n- **Wethouder Smit:** laat een onafhankelijke verkeerstoets uitvoeren voor het bestemmingsplan Noorderpark en koppelt de resultaten terug in de vergadering van mei.\n- **Burgemeester De Groot:** vraagt de status van de fietsbrug bij het station na bij de projectleider; terugkoppeling in de volgende vergadering.\n- **Wethouder Handhaving (niet aanwezig):** behandelt de door de voorzitter doorgezette klacht over geluidsoverlast van een lokaal bedrijf.\n\n## Openstaande vragen\n- Hoe wordt de parkeerdruk opgevangen als het deelauto-concept (compensatie voor de afwijkende parkeernorm van 1,0 in plaats van 1,3 per woning) niet voldoende blijkt?\n- Wat is de actuele status en opleverdatum van de fietsbrug bij het station, die volgens de laatste update in september klaar zou zijn? (antwoord volgt in de volgende vergadering)\n- Wordt de provinciale subsidie voor het zwembad toegekend? (uitslag in juni; bepaalt of een nieuw raadsvoorstel voor de resterende 140.000 euro nodig is)",
+    "wall_seconds": 170.05,
+    "usage": {
+      "completion_tokens": 2432,
+      "prompt_tokens": 1178,
+      "total_tokens": 3610,
+      "prompt_tokens_details": {
+        "cached_tokens": 9
+      }
+    },
+    "predicted_per_second": 14.808079583042002,
+    "correct": true,
+    "score_note": "headers present: ## Besluiten, ## Actiepunten, ## Openstaande vragen"
+  },
+  "strict_instructions": {
+    "content": "{\"samenvatting\": \"Temperatuurafwijking van 8 graden op lijn 3 gedurende 45 minuten; 12 van 400 eenheden afgekeurd. Defecte sensor vervangen; batch niet verzonden; risico beheerst.\", \"kernwoorden\": [\"temperatuurafwijking\", \"sensordefect\", \"kwaliteitscontrole\", \"afkeuringen\", \"batch\"], \"risico_score\": 0.35, \"vereist_escalatie\": false}",
+    "wall_seconds": 62.62,
+    "usage": {
+      "completion_tokens": 910,
+      "prompt_tokens": 243,
+      "total_tokens": 1153,
+      "prompt_tokens_details": {
+        "cached_tokens": 9
+      }
+    },
+    "predicted_per_second": 15.012899201908333,
+    "correct": true,
+    "score_note": "valid JSON, keys=True, word_limit=True"
+  },
+  "_summary": {
+    "n_correct": 4,
+    "n_total": 4
+  }
+}

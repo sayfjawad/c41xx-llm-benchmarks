@@ -243,3 +243,13 @@ Verschil met het release-profiel: `--kv-cache-dtype fp8_e5m2`, `--max-model-len 
 - **Thinking:** de server zet thinking standaard uit; de batterij draait met `FORCE_THINKING=1` zodat redeneer-/kennistaken thinking **aan** hebben, net als bij de llama.cpp-runs (zie scripts/README.md).
 - **Snelheid:** `scripts/bench_vllm_speed.py` — tokens uit `usage.completion_tokens` (niet uit SSE-chunks; bij speculatieve decoding bevat een chunk soms meerdere tokens), 1 koude + 3 warme requests per maat, mediaan van de warme, 256 output-tokens, T=1 / top_p=0.95 / top_k=20 / seed=0. Prefill = prompt-tokens / TTFT van de koude request (warme requests raken de prefix-cache). De prompt is herhalende Nederlandse synthetische tekst; DFlash2-decode is tekstafhankelijk, dus meet ook met je eigen soort tekst.
 - **Sweep-maten:** de sweep-generator overschiet de gevraagde maat ~1.15× (Qwen-tokenizer). Om binnen 262144 te blijven is 220000 de grootste nuttige maat (→ 253k tokens).
+
+
+## Aanvullingen voor de C4140-runs (nov 2026)
+
+- **Contexteis:** alle c4140-runs draaien met een venster van 262.144 tokens; de sweep gaat tot ~253k prompt-tokens (sizes overschieten ~1,15×; bij compactere tokenizers zoals GLM ~1,19×, kies dan `--sizes` kleiner, bv. 212000).
+- **Tokenbudget voor redeneermodellen:** hard, kennis en rekenen worden met `BENCH_MAX_TOKENS=8000` herhaald als een model bij 2000 tokens lege antwoorden geeft; de run met 2000 blijft als `*-initial2000-*` bewaard.
+- **Thinking per taaktype** blijft gelijk: `--nothink` voor longctx/notulen/tools en de sweep, `FORCE_THINKING=1` voor hard/kennis/rekenen.
+- **Servervoorwaarden:** vLLM-servers moeten `--enable-auto-tool-choice --tool-call-parser <parser> --reasoning-parser <parser>` hebben, anders geeft de toolstest 0/4 (HTTP 400).
+- **Snelheid bij llama-server:** `bench_vllm_speed.py` gebruikt `/tokenize` van vLLM; voor llama.cpp worden de prefill/decode-timings uit de sweep gebruikt.
+- Nieuwe resultaten worden gegenereerd met `scripts/run_vllm_battery.sh`; zie [C4140-NODES.md](C4140-NODES.md).

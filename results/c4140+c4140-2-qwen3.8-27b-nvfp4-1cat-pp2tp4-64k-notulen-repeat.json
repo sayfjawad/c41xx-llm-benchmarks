@@ -1,0 +1,43 @@
+{
+  "_summary": {
+    "n_ok": 5,
+    "n_total": 5
+  },
+  "runs": [
+    {
+      "run": 1,
+      "ok": true,
+      "wall_seconds": 8.99,
+      "completion_tokens": 438,
+      "content_len": 1481
+    },
+    {
+      "run": 2,
+      "ok": true,
+      "wall_seconds": 10.63,
+      "completion_tokens": 522,
+      "content_len": 1795
+    },
+    {
+      "run": 3,
+      "ok": true,
+      "wall_seconds": 10.02,
+      "completion_tokens": 491,
+      "content_len": 1699
+    },
+    {
+      "run": 4,
+      "ok": true,
+      "wall_seconds": 9.38,
+      "completion_tokens": 459,
+      "content_len": 1517
+    },
+    {
+      "run": 5,
+      "ok": true,
+      "wall_seconds": 9.16,
+      "completion_tokens": 448,
+      "content_len": 1531
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "hard_reasoning": {
+    "content": "\n\nPloeg 1:  \n- Eerste 3 uur: \\(3 \\times 120 = 360\\) pakketten  \n- Resterende 5 uur: \\(5 \\times 90 = 450\\) pakketten  \n- Totaal ploeg 1: \\(360 + 450 = 810\\)\n\nPloeg 2:  \n- Werkt van 08:00 tot 16:00, dus 8 uur beschikbaar  \n- Pauze van 45 minuten = \\(0{,}75\\) uur  \n- Werkuren: \\(8 - 0{,}75 = 7{,}25\\) uur  \n- Totaal ploeg 2: \\(7{,}25 \\times 100 = 725\\)\n\nPloeg 3:  \n- Werkt van 10:00 tot 16:00 = 6 uur  \n- Totaal ploeg 3: \\(6 \\times 110 = 660\\)\n\nTotaal alle drie ploegen:  \n\\(810 + 725 + 660 = 2195\\)\n\nEINDANTWOORD: 2195",
+    "wall_seconds": 6.09,
+    "usage": {
+      "prompt_tokens": 288,
+      "total_tokens": 1131,
+      "completion_tokens": 843,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "expected 2195, got 2195"
+  },
+  "hard_coding": {
+    "content": "\n\n```python\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key: int) -> int:\n        if key not in self.cache:\n            return -1\n\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: int, value: int) -> None:\n        if self.capacity <= 0:\n            return\n\n        if key in self.cache:\n            self.cache.move_to_end(key)\n\n        self.cache[key] = value\n\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n```",
+    "wall_seconds": 3.56,
+    "usage": {
+      "prompt_tokens": 218,
+      "total_tokens": 751,
+      "completion_tokens": 533,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "has LRUCache=True, OrderedDict=True, get/put=True/True"
+  },
+  "scribr_notulen": {
+    "content": "## Besluiten\n*   **Begrotingswijziging zwembad:** Het voorstel van raadslid Verhoeven, aangevuld met de voorwaarde van raadslid El Amrani, is aangenomen met 6 stemmen voor en 1 tegen (Dijkstra). Dit houdt in dat €200.000 nu wordt vrijgemaakt uit de algemene reserve, terwijl de resterende €140.000 pas wordt besloten na de subsidie-uitslag in juni. Als de subsidie wordt afgewezen, moet er een nieuw raadsvoorstel komen in plaats van automatisch bijstorten.\n*   **Bestemmingsplan Noorderpark:** Er is nog geen besluit genomen over het bestemmingsplan zelf. De raad heeft besloten dat er eerst een onafhankelijke verkeerstoets moet plaatsvinden voordat er een besluit wordt genomen.\n\n## Actiepunten (met wie verantwoordelijk is)\n*   **Wethouder Bakker:** Zorg dat het raadsvoorstel voor de resterende €140.000 voor het zwembad uiterlijk in de raadsvergadering van juli wordt geagendeerd, ongeacht de uitkomst van de subsidie.\n*   **Wethouder Smit:** Laat een onafhankelijke verkeerstoets uitvoeren voor het bestemmingsplan Noorderpark en koppel de resultaten terug in de vergadering van mei.\n*   **Burgemeester De Groot:** Vraag de status van de fietsbrug bij het station na bij de projectleider en koppel dit terug in de volgende vergadering.\n*   **Voorzitter (Burgemeester De Groot):** Zet de klacht over geluidsoverlast van een lokaal bedrijf door naar de wethouder Handhaving.\n\n## Openstaande vragen\n*   Hoe wordt de parkeerdruk opgevangen als het deelauto-concept bij het Noorderpark niet voldoende blijkt te zijn?",
+    "wall_seconds": 2.5,
+    "usage": {
+      "prompt_tokens": 1134,
+      "total_tokens": 1573,
+      "completion_tokens": 439,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "headers present: ## Besluiten, ## Actiepunten, ## Openstaande vragen"
+  },
+  "strict_instructions": {
+    "content": "{\n  \"samenvatting\": \"Temperatuurafwijking op lijn 3 door defecte sensor leidde tot afkeuring van twaalf eenheden uit vierhonderd. Geen product verzonden naar klanten. Sensor is reeds vervangen.\",\n  \"kernwoorden\": [\n    \"temperatuurafwijking\",\n    \"sensor\",\n    \"kwaliteitscontrole\",\n    \"afkeuring\",\n    \"productie\"\n  ],\n  \"risico_score\": 0.20,\n  \"vereist_escalatie\": false\n}",
+    "wall_seconds": 0.99,
+    "usage": {
+      "prompt_tokens": 235,
+      "total_tokens": 367,
+      "completion_tokens": 132,
+      "prompt_tokens_details": null
+    },
+    "predicted_per_second": null,
+    "correct": true,
+    "score_note": "valid JSON, keys=True, word_limit=True"
+  },
+  "_summary": {
+    "n_correct": 4,
+    "n_total": 4
+  }
+}

@@ -73,7 +73,7 @@ for key, q in QUESTIONS:
     body = {
         "model": MODEL,
         "messages": [{"role": "user", "content": q}],
-        "max_tokens": 2000,
+        "max_tokens": int(os.environ.get("BENCH_MAX_TOKENS", 2000)),
         "temperature": 0.2,
     }
     # FORCE_THINKING=1: servers whose default is thinking OFF (e.g. vLLM --default-chat-template-kwargs)

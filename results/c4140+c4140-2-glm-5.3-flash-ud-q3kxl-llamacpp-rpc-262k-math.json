@@ -1,0 +1,96 @@
+{
+  "stap_korting": {
+    "question": "Een winkel past na elkaar drie kortingen toe op een product van 250 euro: eerst 20% korting, dan nog eens 10% korting op het resterende bedrag, en tot slot een vaste korting van 15 euro. Wat is de einprijs? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <bedrag>'.",
+    "answer": "## Berekening\n\n**Stap 1: Eerste korting van 20%**\n- 250 × 20% = 250 × 0,20 = 50 euro korting\n- Nieuw bedrag: 250 − 50 = **200 euro**\n\n**Stap 2: Tweede korting van 10% op het resterende bedrag**\n- 200 × 10% = 200 × 0,10 = 20 euro korting\n- Nieuw bedrag: 200 − 20 = **180 euro**\n\n**Stap 3: Vaste korting van 15 euro**\n- 180 − 15 = **165 euro**\n\nEINDANTWOORD: 165 euro",
+    "predicted_answer": "165 euro",
+    "expected_answer": "165 euro",
+    "correct": true,
+    "wall_seconds": 16.67,
+    "completion_tokens": 224
+  },
+  "logica_ridders": {
+    "question": "Op een eiland zijn er Ridders (spreken altijd de waarheid) en Schurken (liegen altijd). Je ontmoet A en B. A zegt: 'B is een schurk.' B zegt: 'A en ik zijn beiden ridders.' Wat zijn A en B? Redeneer stap voor stap en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: A=..., B=...'.",
+    "answer": "Stap voor stap:\n\n1. Stel dat A een ridder is.  \n   Dan is A’s uitspraak waar, dus B is een schurk.  \n   B zegt dan dat “A en ik zijn beiden ridders”, maar dat is onwaar omdat B een schurk is. Dit is consistent.\n\n2. Stel dat A een schurk is.  \n   Dan liegt A, dus de uitspraak “B is een schurk” is onwaar.  \n   Dat betekent dat B een ridder is.  \n   Maar dan moet B’s uitspraak waar zijn: “A en ik zijn beiden ridders.” Dit is onmogelijk, want A is een schurk.\n\nDus de enige mogelijke oplossing is: A is een ridder en B is een schurk.\n\nEINDANTWOORD: A=ridder, B=schurk",
+    "predicted_answer": "a=ridder, b=schurk",
+    "expected_answer": "A=ridder, B=schurk",
+    "correct": true,
+    "wall_seconds": 28.94,
+    "completion_tokens": 413
+  },
+  "kans_dobbelsteen": {
+    "question": "Je gooit twee eerlijke dobbelstenen. Wat is de kans dat de som van de ogen precies 7 is? Geef het antwoord als breuk EN als percentage, op de laatste regel als 'EINDANTWOORD: <breuk> = <percentage>%'.",
+    "answer": "# Kansberekening: som van 7 met twee dobbelstenen\n\n**Totaal aantal uitkomsten:**\nElke dobbelsteen heeft 6 mogelijkheden, dus samen: 6 × 6 = **36 gelijkwaardige uitkomsten**\n\n**Gunstige uitkomsten (som = 7):**\n- (1, 6)\n- (2, 5)\n- (3, 4)\n- (4, 3)\n- (5, 2)\n- (6, 1)\n\nDat zijn **6 gunstige uitkomsten**.\n\n**Kans berekenen:**\n\n$$P(\\text{som} = 7) = \\frac{6}{36} = \\frac{1}{6}$$\n\n**Als percentage:**\n\n$$\\frac{1}{6} = 0{,}1666\\ldots \\approx 16{,}67\\%$$\n\nEINDANTWOORD: 1/6 = 16,67%",
+    "predicted_answer": "1/6 = 16,67%",
+    "expected_answer": "1/6",
+    "correct": true,
+    "wall_seconds": 37.18,
+    "completion_tokens": 538
+  },
+  "combinatoriek": {
+    "question": "Op hoeveel manieren kunnen 5 verschillende boeken worden verdeeld over 3 verschillende personen, als elke persoon minstens 1 boek moet krijgen? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "## Oplossing\n\nWe verdelen 5 **verschillende** boeken over 3 **verschillende** personen, waarbij niemand lege handen mag blijven. Dit is het aantal surjecties van 5 elementen naar 3 elementen.\n\n### Methode 1: Inclusie-exclusie\n\nZonder beperking: elk boek kan naar elk van de 3 personen → **3⁵ = 243** verdelingen.\n\nTrek de slechte verdelingen af (waar minstens één persoon niets krijgt):\n\n- Trek af: verdelingen waarbij een bepaalde persoon niets krijgt (alle boeken naar de andere 2): **2⁵ = 32** per persoon, dus 3 · 32 = 96\n- Tel terug op: verdelingen waarbij twee personen niets krijgen (alles naar één persoon): **1⁵ = 1** per persoon, dus 3 · 1 = 3\n\n$$3^5 - \\binom{3}{1}\\cdot 2^5 + \\binom{3}{2}\\cdot 1^5 = 243 - 96 + 3 = 150$$\n\n### Methode 2: Casusanalyse (controle)\n\nMogelijke groottes per persoon: **(3,1,1)** of **(2,2,1)**.\n\n**Geval (3,1,1):** kies wie 3 boeken krijgt (3 manieren), kies zijn 3 boeken $\\binom{5}{3}=10$, verdeel de laatste 2 boeken over de anderen (2 manieren):\n$$3 \\cdot 10 \\cdot 2 = 60$$\n\n**Geval (2,2,1):** kies wie 1 boek krijgt (3 manieren), kies dat boek (5 manieren), kies 2 van de resterende 4 boeken voor één van de anderen $\\binom{4}{2}=6$:\n$$3 \\cdot 5 \\cdot 6 = 90$$\n\n$$60 + 90 = 150$$\n\nBeide methoden geven hetzelfde resultaat.\n\nEINDANTWOORD: 150",
+    "predicted_answer": "150",
+    "expected_answer": "150",
+    "correct": true,
+    "wall_seconds": 58.54,
+    "completion_tokens": 853
+  },
+  "algebra": {
+    "question": "Twee getallen hebben een som van 47 en een verschil van 13. Wat zijn de twee getallen? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <groot getal> en <klein getal>'.",
+    "answer": "## Oplossing\n\nLaat de twee getallen **x** (groot) en **y** (klein) zijn.\n\n**Stelsel vergelijkingen:**\n- x + y = 47\n- x − y = 13\n\n**Stap 1:** Tel de vergelijkingen bij elkaar op:\n$$2x = 60 \\implies x = 30$$\n\n**Stap 2:** Vul in bij de eerste vergelijking:\n$$30 + y = 47 \\implies y = 17$$\n\n**Controle:**\n- Som: 30 + 17 = 47 ✓\n- Verschil: 30 − 17 = 13 ✓\n\nEINDANTWOORD: 30 en 17",
+    "predicted_answer": "30 en 17",
+    "expected_answer": "30 en 17",
+    "correct": true,
+    "wall_seconds": 18.58,
+    "completion_tokens": 256
+  },
+  "getaltheorie": {
+    "question": "Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "## Aanpak\n\nIk zoek de kleinste n zodat n! deelbaar is door 1000.\n\n**Factoriseer 1000:**\n$$1000 = 2^3 \\times 5^3$$\n\nDus n! moet minstens **drie factoren 2** en **drie factoren 5** bevatten. De factoren 5 zijn de flessenhals, want 5 komt veel schaarser voor dan 2.\n\n**Tel de factoren 5 in n!:**\n\n| n | Factoren 5 in n! | Aantal vijven |\n|---|---|---|\n| 1–4 | — | 0 |\n| 5–9 | 5 | 1 |\n| 10–14 | 5, 10 | 2 |\n| 15–19 | 5, 10, 15 | 3 ✓ |\n\n**Controleer n = 14:** de vijven komen alleen uit 5 en 10 (= 2·5), dus 14! bevat slechts 5². Niet genoeg — 14! is **niet** deelbaar door 1000.\n\n**Controleer n = 15:** de getallen 5, 10 en 15 leveren elk één factor 5, dus 15! bevat 5³ = 125. De factoren 2 zijn ruim voldoende aanwezig (2, 4, 6, 8, 10, 12, 14 leveren samen veel meer dan drie tweens). Dus 15! is deelbaar door 2³ × 5³ = 1000.\n\n**Verificatie:** 15! = 1.307.674.368.000 en 15! ÷ 1000 = 1.307.674.368 — inderdaad een geheel getal.\n\nEINDANTWOORD: 15",
+    "predicted_answer": "15",
+    "expected_answer": "15",
+    "correct": true,
+    "wall_seconds": 55.31,
+    "completion_tokens": 806
+  },
+  "meetkunde": {
+    "question": "Een rechthoekige driehoek heeft een hypotenusa van 13 cm en een rechthoekszijde van 5 cm. Wat is de oppervlakte van de driehoek? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> cm2'.",
+    "answer": "## Oplossing\n\n**Stap 1: Bereken de ontbrekende rechthoekszijde**\n\nMet de stelling van Pythagoras:\n$$a^2 + b^2 = c^2$$\n\nwaarbij $c = 13$ (hypotenusa) en $a = 5$ (gegeven rechthoekszijde):\n\n$$5^2 + b^2 = 13^2$$\n$$25 + b^2 = 169$$\n$$b^2 = 144$$\n$$b = 12 \\text{ cm}$$\n\n**Stap 2: Bereken de oppervlakte**\n\nDe oppervlakte van een rechthoekige driehoek is:\n$$\\text{Oppervlakte} = \\frac{1}{2} \\times \\text{rechthoekszijde}_1 \\times \\text{rechthoekszijde}_2$$\n\n$$\\text{Oppervlakte} = \\frac{1}{2} \\times 5 \\times 12 = 30 \\text{ cm}^2$$\n\nEINDANTWOORD: 30 cm2",
+    "predicted_answer": "30 cm2",
+    "expected_answer": "30 cm2",
+    "correct": true,
+    "wall_seconds": 23.03,
+    "completion_tokens": 323
+  },
+  "rente": {
+    "question": "Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "## Oplossing\n\n**Gegeven:** Startbedrag €1000, rentevoet 4% per jaar, opbrengst moet meer dan €2000 worden.\n\n**Formule voor samengestelde rente:**\n\n$$1000 \\times (1{,}04)^n > 2000 \\quad\\Rightarrow\\quad (1{,}04)^n > 2$$\n\n**Oplossen met logaritmes:**\n\n$$n > \\frac{\\ln(2)}{\\ln(1{,}04)} = \\frac{0{,}6931}{0{,}0392} \\approx 17{,}67$$\n\nDus na minstens 18 volle jaren. Controleer dit:\n\n| Jaren | Berekening | Bedrag |\n|-------|-----------|--------|\n| 17 | 1000 × (1,04)¹⁷ | €1947,70 → nog **niet** verdubbeld |\n| 18 | 1000 × (1,04)¹⁸ | €2025,61 → **meer dan verdubbeld** ✓ |\n\nNa 17 jaar is het bedrag nog €1947,70 (minder dan €2000). Pas na 18 jaar overstijgt het bedrag de €2000 met €2025,61.\n\nEINDANTWOORD: 18 jaar",
+    "predicted_answer": "18 jaar",
+    "expected_answer": "18 jaar",
+    "correct": true,
+    "wall_seconds": 86.89,
+    "completion_tokens": 1288
+  },
+  "valstrik_schapen": {
+    "question": "Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "De vraag zegt: \"Op 1 na sterven ze allemaal.\" Dat betekent dat alle schapen sterven **behalve één**. Dus van de 17 schapen blijven er 16 dood en overleeft er 1 schaap.\n\nEINDANTWOORD: 1",
+    "predicted_answer": "1",
+    "expected_answer": "1 schaap",
+    "correct": true,
+    "wall_seconds": 22.9,
+    "completion_tokens": 329
+  },
+  "valstrik_caesar": {
+    "question": "Julius Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr. Hoe oud was hij toen hij stierf? Let goed op of zijn verjaardag dat jaar al was geweest. Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Julius Caesar werd geboren in juli 100 v.Chr. Zijn verjaardagen vielen dus in juli van elk volgend jaar:\n\n- Op zijn verjaardag in juli 45 v.Chr. werd hij 55 jaar.\n- Op 15 maart 44 v.Chr. was zijn verjaardag van dat jaar nog niet geweest, want maart ligt vóór juli.\n\nHij was dus 55 jaar oud toen hij stierf.\n\nEINDANTWOORD: 55 jaar",
+    "predicted_answer": "55 jaar",
+    "expected_answer": "55 jaar",
+    "correct": true,
+    "wall_seconds": 65.2,
+    "completion_tokens": 956
+  },
+  "_summary": {
+    "n_correct": 10,
+    "n_total": 10
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "stap_korting": {
+    "question": "Een winkel past na elkaar drie kortingen toe op een product van 250 euro: eerst 20% korting, dan nog eens 10% korting op het resterende bedrag, en tot slot een vaste korting van 15 euro. Wat is de einprijs? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <bedrag>'.",
+    "answer": "We need answer in Dutch. Need solve simple arithmetic. Need final line exactly EINDANTWOORD: <bedrag>. Let's compute: 250 -20% = 200. Then 10% off remaining: 200 -20 =180. Then fixed 15: 165. Need show calculation. Ensure final line.\n</think>\n\nEerste korting: 20% van €250 = €50  \nNieuw bedrag: €250 − €50 = €200  \n\nTweede korting: 10% van €200 = €20  \nNieuw bedrag: €200 − €20 = €180  \n\nVaste korting: €15  \nEindprijs: €180 − €15 = €165  \n\nEINDANTWOORD: €165",
+    "predicted_answer": "<bedrag>. let's compute: 250 -20% = 200. then 10% off remaining: 200 -20 =180. then fixed 15: 165. need show calculation. ensure final line",
+    "expected_answer": "165 euro",
+    "correct": true,
+    "wall_seconds": 4.04,
+    "completion_tokens": 201
+  },
+  "logica_ridders": {
+    "question": "Op een eiland zijn er Ridders (spreken altijd de waarheid) en Schurken (liegen altijd). Je ontmoet A en B. A zegt: 'B is een schurk.' B zegt: 'A en ik zijn beiden ridders.' Wat zijn A en B? Redeneer stap voor stap en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: A=..., B=...'.",
+    "answer": "We need answer in Dutch. Need solve knights/knaves. Let's reason.\n\nA says: B is a knave. B says: A and I are both knights.\n\nLet A knight? If A knight, statement true => B knave. If B knave, B's statement false. B says A and B both knights. If B knave, statement false, consistent? If A knight and B knave, B's statement \"A and B both knights\" is false (because B not knight). So consistent.\n\nIf A knave, A's statement false => B not knave => B knight. If B knight, B's statement true => A and B both knights, contradiction A knave. So impossible.\n\nThus A knight, B knave. Need step-by-step and final line exactly 'EINDANTWOORD: A=..., B=...'. Could use A=riddere? The prompt: 'EINDANTWOORD: A=..., B=...'. Need fill likely A=riddere, B=schurk? In Dutch: Ridders and Schurken. Could be A=riddere, B=schurk. Or A=Ridder, B=Schurk. Need last line. Ensure exact? It says als 'EINDANTWOORD: A=..., B=...'. We can put EINDANTWOORD: A=riddere, B=schurk. Maybe singular. Let's craft concise.\n</think>\n\nStap 1: Stel in dat A een ridder is.  \nDan is A’s uitspraak waar: “B is een schurk.” Dus B is een schurk.\n\nStap 2: Controleer B.  \nB zegt: “A en ik zijn beiden ridders.”  \nAls B een schurk is, moet deze uitspraak onwaar zijn. Dat klopt, want B is geen ridder.\n\nStap 3: Stel in dat A een schurk is.  \nDan is A’s uitspraak onwaar: “B is een schurk” is onwaar, dus B is een ridder.\n\nStap 4: Controleer B in dat geval.  \nAls B een ridder is, moet B’s uitspraak waar zijn: “A en ik zijn beiden ridders.”  \nMaar dan zou A ook een ridder moeten zijn, terwijl we aannamen dat A een schurk is. Contradictie.\n\nDus de enige consistente oplossing is: A is een ridder en B is een schurk.\n\nEINDANTWOORD: A=riddere, B=schurk",
+    "predicted_answer": "a=..., b=...'. could use a=riddere? the prompt: 'eindantwoord: a=..., b=...'. need fill likely a=riddere, b=schurk? in dutch: ridders and schurken. could be a=riddere, b=schurk. or a=ridder, b=schurk. need last line. ensure exact? it says als 'eindantwoord: a=..., b=...'. we can put eindantwoord: a=riddere, b=schurk. maybe singular. let's craft concise",
+    "expected_answer": "A=ridder, B=schurk",
+    "correct": true,
+    "wall_seconds": 11.08,
+    "completion_tokens": 561
+  },
+  "kans_dobbelsteen": {
+    "question": "Je gooit twee eerlijke dobbelstenen. Wat is de kans dat de som van de ogen precies 7 is? Geef het antwoord als breuk EN als percentage, op de laatste regel als 'EINDANTWOORD: <breuk> = <percentage>%'.",
+    "answer": "We need answer in Dutch. User asks: roll two fair dice, probability sum exactly 7. Give answer as fraction and percentage, last line as 'EINDANTWOORD: <breuk> = <percentage>%'. Need compute: 6 favorable pairs out of 36 = 1/6. Percentage = 16.666...% maybe 16,67%? They ask percentage. Could be 16,67% or 16.67%. Dutch decimal comma. Format exact? 'EINDANTWOORD: <breuk> = <percentage>%'. Need likely use 1/6 = 16,67%. But if exact percentage? 1/6 = 16.666...%. They might expect 16,67% rounded? The instruction says as percentage, no rounding specified. Could give 16,67% or 16,666...%. To be safe maybe 16,67%? But exact percentage is 16,666...%. The final line must be exact format. Could use 16,67%? Let's think. In Dutch, percentage often with comma. If they want exact, 1/6 = 16,666...% maybe not finite. But final line with <percentage>% could be 16,67% if rounded to two decimals. The prompt doesn't specify rounding. Maybe use 16,67% as common. But if automated checker expects 16.67? It says Dutch, likely comma. Could also use 16,666...% but that includes ellipsis. Maybe better: 16,67%. Need final line exactly. Could include explanation before. Ensure last line: EINDANTWOORD: 1/6 = 16,67%. If they expect exact maybe 16,666...%? Let's evaluate. \"Geef het antwoord als breuk EN als percentage\" no rounding. A percentage can be repeating. In final line, maybe \"1/6 = 16,67%\" is approximate. If they want exact, \"1/6 = 16,666...%\" is exact-ish. But format <percentage>% maybe can include ...? It says percentage, not necessarily rounded. Many math tasks expect 16.67%. Since no rounding specified, maybe use 16,67% (two decimals) is acceptable. But to be precise, we can say in text: 1/6 = 16,666...% (afgerond 16,67%). Last line maybe choose 16,67%. However if they parse, they may expect 16.67 or 16,67. The requested last line exact: 'EINDANTWOORD: <breuk> = <percentage>%'. If I put 16,666...% maybe not standard. Could put 16,67%. Let's decide. Need maybe use Dutch decimal comma. Final: EINDANTWOORD: 1/6 = 16,67%. Include brief explanation. Ensure last line exactly.\n</think>\n\nEr zijn 36 mogelijke uitkomsten bij twee dobbelstenen. Er zijn 6 uitkomsten met som 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1).\n\nKans = 6/36 = 1/6 ≈ 16,67%.\n\nEINDANTWOORD: 1/6 = 16,67%",
+    "predicted_answer": "<breuk> = <percentage>%'. need compute: 6 favorable pairs out of 36 = 1/6. percentage = 16.666...% maybe 16,67%? they ask percentage. could be 16,67% or 16.67%. dutch decimal comma. format exact? 'eindantwoord: <breuk> = <percentage>%'. need likely use 1/6 = 16,67%. but if exact percentage? 1/6 = 16.666...%. they might expect 16,67% rounded? the instruction says as percentage, no rounding specified. could give 16,67% or 16,666...%. to be safe maybe 16,67%? but exact percentage is 16,666...%. the final line must be exact format. could use 16,67%? let's think. in dutch, percentage often with comma. if they want exact, 1/6 = 16,666...% maybe not finite. but final line with <percentage>% could be 16,67% if rounded to two decimals. the prompt doesn't specify rounding. maybe use 16,67% as common. but if automated checker expects 16.67? it says dutch, likely comma. could also use 16,666...% but that includes ellipsis. maybe better: 16,67%. need final line exactly. could include explanation before. ensure last line: eindantwoord: 1/6 = 16,67%. if they expect exact maybe 16,666...%? let's evaluate. \"geef het antwoord als breuk en als percentage\" no rounding. a percentage can be repeating. in final line, maybe \"1/6 = 16,67%\" is approximate. if they want exact, \"1/6 = 16,666...%\" is exact-ish. but format <percentage>% maybe can include ...? it says percentage, not necessarily rounded. many math tasks expect 16.67%. since no rounding specified, maybe use 16,67% (two decimals) is acceptable. but to be precise, we can say in text: 1/6 = 16,666...% (afgerond 16,67%). last line maybe choose 16,67%. however if they parse, they may expect 16.67 or 16,67. the requested last line exact: 'eindantwoord: <breuk> = <percentage>%'. if i put 16,666...% maybe not standard. could put 16,67%. let's decide. need maybe use dutch decimal comma. final: eindantwoord: 1/6 = 16,67%. include brief explanation. ensure last line exactly",
+    "expected_answer": "1/6",
+    "correct": true,
+    "wall_seconds": 15.59,
+    "completion_tokens": 792
+  },
+  "combinatoriek": {
+    "question": "Op hoeveel manieren kunnen 5 verschillende boeken worden verdeeld over 3 verschillende personen, als elke persoon minstens 1 boek moet krijgen? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We need answer in Dutch. Need solve combinatorics: 5 distinct books distributed to 3 distinct persons, each at least 1 book. Need show calculation and final line EINDANTWOORD: <number>.\n\nWe need compute number of onto functions from 5 books to 3 persons: 3^5 - C(3,1)2^5 + C(3,2)1^5 = 243 - 96 + 3 = 150. Or partitions by counts: (3,1,1): choose person with 3: 3, choose 3 books: C(5,3)=10, remaining 2 books to remaining 2 persons: 2! =2 => 60. (2,2,1): choose person with 1: 3, choose book:5, partition remaining 4 into two pairs for two persons: C(4,2)=6 (since persons distinct, choose 2 for one, rest other) => 90. total 150. Need final line exactly. Ensure no extra after? Can include calculation. Final line EINDANTWOORD: 150.\n</think>\n\nWe tellen de verdelingen van 5 verschillende boeken over 3 verschillende personen, waarbij niemand leeg blijft.\n\nDit is het aantal surjectieve (op alle personen) afbeeldingen van 5 boeken naar 3 personen.\n\nMet de inclusie-exclusie:\n\n\\[\n3^5 - \\binom{3}{1}2^5 + \\binom{3}{2}1^5\n\\]\n\n\\[\n= 243 - 3 \\cdot 32 + 3 \\cdot 1\n\\]\n\n\\[\n= 243 - 96 + 3 = 150\n\\]\n\nEINDANTWOORD: 150",
+    "predicted_answer": "<number>",
+    "expected_answer": "150",
+    "correct": false,
+    "wall_seconds": 8.02,
+    "completion_tokens": 406
+  },
+  "algebra": {
+    "question": "Twee getallen hebben een som van 47 en een verschil van 13. Wat zijn de twee getallen? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <groot getal> en <klein getal>'.",
+    "answer": "We moeten antwoorden in het Nederlands. Probleem: twee getallen som 47, verschil 13. Laat x groot, y klein. x+y=47, x-y=13. Optellen: 2x=60 => x=30, y=17. Controle: 30+17=47, 30-17=13. Eindantwoord op laatste regel exact: EINDANTWOORD: 30 en 17.\n</think>\n\nDe twee getallen zijn 30 en 17.\n\nEINDANTWOORD: 30 en 17",
+    "predicted_answer": "30 en 17",
+    "expected_answer": "30 en 17",
+    "correct": true,
+    "wall_seconds": 2.78,
+    "completion_tokens": 138
+  },
+  "getaltheorie": {
+    "question": "Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We need answer in Dutch. User asks: \"Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.\"\n\nNeed solve. 1000 = 10^3 = 2^3 * 5^3. Need smallest n such that v_5(n!) >=3 and v_2(n!) >=3. v_2 usually larger. Need v_5(n!) >=3. v_5(n!) = floor(n/5)+floor(n/25)+... For n=10: floor(10/5)=2, not enough. n=11-14: 2. n=15: floor(15/5)=3, floor(15/25)=0 =>3. v_2(15!) huge >=3. So smallest n=15. Need show reasoning. Ensure final line exactly EINDANTWOORD: 15.\n\nDouble-check: 1000=2^3*5^3. For n=14, factors of 5: 5,10 only two, so not divisible by 125? Actually 1000 requires 5^3=125. 14! has 5^2, so no. 15! includes 15=3*5, so three 5s. 2s enough. So answer 15.\n\nNeed final in Dutch with reasoning. Last line exact.\n</think>\n\nWe zoeken de kleinste \\(n\\) waarvoor \\(n!\\) deelbaar is door \\(1000\\).\n\nEerst factoriseren we:\n\n\\[\n1000 = 10^3 = 2^3 \\cdot 5^3\n\\]\n\nDus \\(n!\\) moet minstens drie factoren \\(2\\) en drie factoren \\(5\\) bevatten.\n\nIn een faculteit komen veel meer factoren \\(2\\) voor dan factoren \\(5\\), dus de beperkende factor is het aantal factoren \\(5\\).\n\nWe tellen het aantal factoren \\(5\\) in \\(n!\\) met:\n\n\\[\n\\left\\lfloor \\frac{n}{5} \\right\\rfloor + \\left\\lfloor \\frac{n}{25} \\right\\rfloor + \\cdots\n\\]\n\nVoor \\(n = 14\\):\n\n\\[\n\\left\\lfloor \\frac{14}{5} \\right\\rfloor = 2\n\\]\n\nDus \\(14!\\) bevat slechts twee factoren \\(5\\), dus is niet deelbaar door \\(5^3 = 125\\), en dus ook niet door \\(1000\\).\n\nVoor \\(n = 15\\):\n\n\\[\n\\left\\lfloor \\frac{15}{5} \\right\\rfloor = 3\n\\]\n\nDus \\(15!\\) bevat drie factoren \\(5\\). Het aantal factoren \\(2\\) is zeker groter dan drie, dus \\(15!\\) is wel deelbaar door \\(2^3 \\cdot 5^3 = 1000\\).\n\nDaarom is de kleinste positieve gehele \\(n\\) gelijk aan \\(15\\).\n\nEINDANTWOORD: 15",
+    "predicted_answer": "<getal>'.\"",
+    "expected_answer": "15",
+    "correct": false,
+    "wall_seconds": 14.9,
+    "completion_tokens": 757
+  },
+  "meetkunde": {
+    "question": "Een rechthoekige driehoek heeft een hypotenusa van 13 cm en een rechthoekszijde van 5 cm. Wat is de oppervlakte van de driehoek? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> cm2'.",
+    "answer": "We moeten antwoorden in het Nederlands. Probleem: rechthoekige driehoek, hypotenusa 13 cm, een rechthoekszijde 5 cm. Andere rechthoekszijde via Pythagoras: sqrt(13^2 - 5^2)=sqrt(169-25)=sqrt144=12 cm. Oppervlakte = 1/2 * 5 * 12 = 30 cm^2. Eindantwoord op laatste regel exact: EINDANTWOORD: 30 cm2.\n</think>\n\nDe andere rechthoekszijde is:\n\n\\[\n\\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12 \\text{ cm}\n\\]\n\nDe oppervlakte is:\n\n\\[\n\\frac{1}{2} \\cdot 5 \\cdot 12 = 30 \\text{ cm}^2\n\\]\n\nEINDANTWOORD: 30 cm2",
+    "predicted_answer": "30 cm2",
+    "expected_answer": "30 cm2",
+    "correct": true,
+    "wall_seconds": 4.84,
+    "completion_tokens": 243
+  },
+  "rente": {
+    "question": "Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "We need answer in Dutch. User asks: \"Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.\"\n\nNeed solve: compound interest annual 4%. Amount after n years: 1000*(1.04)^n. Need more than doubled: >2000. (1.04)^n > 2. n > ln2/ln1.04. Compute. ln2=0.69314718056. ln1.04 approx 0.03922071315. ratio = 17.672947... Let's calculate: 0.693147/0.0392207 = 17.6729. Full years integer n such that amount > doubled. n=17? 1.04^17? Need check if >2? Since threshold 17.67, n=18. Let's verify: 1.04^17 maybe 1.9479? 1.04^18=2.0258. So 18 full years.\n\nNeed show calculation. Final line exactly EINDANTWOORD: 18 jaar. Ensure last line. Could include formula. Need maybe \"volle jaren\" means complete years, so 18.\n\nNeed final in Dutch.\n</think>\n\nHet bedrag na \\(n\\) volle jaren is:\n\n\\[\n1000 \\cdot (1{,}04)^n\n\\]\n\nWe willen dat dit meer dan verdubbeld is:\n\n\\[\n1000 \\cdot (1{,}04)^n > 2000\n\\]\n\n\\[\n(1{,}04)^n > 2\n\\]\n\nNeem de natuurlijke logaritme:\n\n\\[\nn \\cdot \\ln(1{,}04) > \\ln(2)\n\\]\n\n\\[\nn > \\frac{\\ln(2)}{\\ln(1{,}04)}\n\\]\n\n\\[\nn > \\frac{0{,}693147}{0{,}039221} \\approx 17{,}67\n\\]\n\nOmdat het aantal jaren een vol getal moet zijn, moet \\(n\\) minstens 18 zijn.\n\nEINDANTWOORD: 18 jaar",
+    "predicted_answer": "<getal> jaar'.\"",
+    "expected_answer": "18 jaar",
+    "correct": false,
+    "wall_seconds": 11.67,
+    "completion_tokens": 592
+  },
+  "valstrik_schapen": {
+    "question": "Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We need answer in Dutch likely. User: \"Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.\"\n\nThis is a trick question? \"Op 1 na sterven ze allemaal\" means all but one die. So one sheep remains alive. But question: \"Hoeveel schapen heeft hij nog?\" Could be he still has 17 sheep? If they die, he still has the dead sheep? Common riddle: farmer has 17 sheep, all but 1 die, how many sheep does he have? Answer: 1 (alive) or 17 (still owns dead sheep?) Let's parse Dutch: \"Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog?\" If all but one die, how many sheep does he still have? Usually answer: 1, because one survived. But \"heeft hij nog\" could mean still has (alive) sheep. The phrase \"Op 1 na sterven ze allemaal\" = all except one die. So he has 1 sheep left (alive). Need final line EINDANTWOORD: <getal>. Could be 1. Need maybe explain briefly. Ensure last line exact.\n</think>\n\nHij heeft nog 1 schaap over.\n\nEINDANTWOORD: 1",
+    "predicted_answer": "<getal>'.\"",
+    "expected_answer": "1 schaap",
+    "correct": false,
+    "wall_seconds": 6.45,
+    "completion_tokens": 326
+  },
+  "valstrik_caesar": {
+    "question": "Julius Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr. Hoe oud was hij toen hij stierf? Let goed op of zijn verjaardag dat jaar al was geweest. Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "We need answer in Dutch. User asks: Julius Caesar born in July 100 BC and died March 15 44 BC. How old was he when he died? Careful if birthday that year had already passed. Show reasoning and final answer last line 'EINDANTWOORD: <getal> jaar'.\n\nNeed compute age. Born July 100 BC. Died March 15 44 BC. In BC years, no year 0? For age calculation, from July 100 BC to July 44 BC is 56 years? Let's check: 100 BC to 44 BC difference = 56 years (since 100-44=56). If born July 100 BC, by July 44 BC he turned 56. Died March 15 44 BC, before July 44 BC, so still 55. Need be careful with BC inclusive? Age in completed years: from July 100 BC to March 44 BC. Count years: 100 BC to 99 BC = 1? Let's do: born July 100 BC. At July 99 BC age 1. ... At July 45 BC age 55? 100-45=55. At July 44 BC age 56. March 44 BC before July, so 55. Yes.\n\nNeed final line exactly EINDANTWOORD: 55 jaar. Could include reasoning. Ensure no extra after final? Last line. Dutch.\n</think>\n\nJulius Caesar werd geboren in **juli 100 v.Chr.** en stierf op **15 maart 44 v.Chr.**\n\nVan juli 100 v.Chr. tot juli 44 v.Chr. zijn er:\n\n100 − 44 = **56 jaar**\n\nMaar hij stierf in **maart 44 v.Chr.**, dus **vóór** zijn verjaardag in juli 44 v.Chr. Dat betekent dat hij in dat jaar nog niet 56 jaar was geworden.\n\nHij was dus nog **55 jaar** oud.\n\nEINDANTWOORD: 55 jaar",
+    "predicted_answer": "<getal> jaar'",
+    "expected_answer": "55 jaar",
+    "correct": false,
+    "wall_seconds": 9.84,
+    "completion_tokens": 498
+  },
+  "_summary": {
+    "n_correct": 5,
+    "n_total": 10
+  }
+}

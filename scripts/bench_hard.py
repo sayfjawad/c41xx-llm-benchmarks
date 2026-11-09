@@ -120,7 +120,7 @@ def main():
         body = {
             "model": MODEL,
             "messages": messages,
-            "max_tokens": 3000,
+            "max_tokens": int(os.environ.get("BENCH_MAX_TOKENS", 3000)),
             "temperature": 0.3,
         }
         if NO_THINK or key in FORMAT_TASKS:

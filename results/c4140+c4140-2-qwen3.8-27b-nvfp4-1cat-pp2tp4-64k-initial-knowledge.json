@@ -1,0 +1,184 @@
+{
+  "scheikunde_1": {
+    "question": "Wat is de scheikundige brutoformule van cafeïne?",
+    "answer": "We moeten antwoorden in het Nederlands. Vraag: \"Wat is de scheikundige brutoformule van cafeïne? Antwoord kort en direct.\" We moeten kort en direct antwoorden. Brutoformule cafeïne is C8H10N4O2. Moet alleen antwoord geven.\n</think>\n\nC₈H₁₀N₄O₂",
+    "expected_keywords": [
+      "c8h10n4o2"
+    ],
+    "matched_keywords": [
+      "c8h10n4o2"
+    ],
+    "correct": true,
+    "wall_seconds": 1.66
+  },
+  "geschiedenis_1": {
+    "question": "In welk jaar werd het Verdrag van Utrecht getekend dat de Spaanse Successieoorlog beëindigde?",
+    "answer": "We need answer user's question in Dutch: \"In welk jaar werd het Verdrag van Utrecht getekend dat de Spaanse Successieoorlog beëindigde? Antwoord kort en direct.\" Need short direct. Treaty of Utrecht ended War of Spanish Succession, signed 11 April 1713. Answer: 1713. Ensure final only short.\n</think>\n\n1713",
+    "expected_keywords": [
+      "1713"
+    ],
+    "matched_keywords": [
+      "1713"
+    ],
+    "correct": true,
+    "wall_seconds": 1.79
+  },
+  "geografie_1": {
+    "question": "Wat is de diepste plek in de Middellandse Zee en hoe diep is die ongeveer?",
+    "answer": "We need answer in Dutch. User asks: \"Wat is de diepste plek in de Middellandse Zee en hoe diep is die ongeveer? Antwoord kort en direct.\" Need provide short direct. Need know deepest place in Mediterranean Sea. It's Calypso Deep? In Ionian Sea, near Crete? Mediterranean deepest point: Calypso Deep, about 8,605 m (or 8,584 m? Let's verify from memory). The deepest point in Mediterranean is Calypso Deep in the Hellenic Trench, about 8,605 m (28,232 ft) below sea level. Some sources say 8,584 m. Need short direct. Could say: De diepste plek is de Calypso-diepte in de Ionische Zee, ongeveer 8.600 meter diep. Ensure Dutch. Maybe \"Calypso Deep\" or \"Calypso-diepte\". Direct.\n</think>\n\nDe diepste plek is de Calypso-diepte in de Ionische Zee, ongeveer 8.600 meter diep.",
+    "expected_keywords": [
+      "calypso",
+      "5267"
+    ],
+    "matched_keywords": [
+      "calypso"
+    ],
+    "correct": false,
+    "wall_seconds": 4.84
+  },
+  "biologie_1": {
+    "question": "Welk enzym zet zetmeel om in maltose, al in de mond via speeksel?",
+    "answer": "We need answer in Dutch. User asks: \"Welk enzym zet zetmeel om in maltose, al in de mond via speeksel? Antwoord kort en direct.\" Need short direct. Enzyme is amylase, specifically salivary amylase (alpha-amylase). Answer: Speekselamylase (α-amylase). Ensure short.\n</think>\n\nSpeekselamylase (α-amylase).",
+    "expected_keywords": [
+      "amylase"
+    ],
+    "matched_keywords": [
+      "amylase"
+    ],
+    "correct": true,
+    "wall_seconds": 1.9
+  },
+  "wiskunde_1": {
+    "question": "Wat is de Euler-Mascheroniconstante, tot 4 decimalen?",
+    "answer": "We moeten antwoorden in het Nederlands. Vraag: \"Wat is de Euler-Mascheroniconstante, tot 4 decimalen? Antwoord kort en direct.\" We moeten kort en direct. Euler-Mascheroni constant gamma ≈ 0.5772156649, tot 4 decimalen 0.5772. Antwoord alleen.\n</think>\n\n0.5772",
+    "expected_keywords": [
+      "0.5772"
+    ],
+    "matched_keywords": [
+      "0.5772"
+    ],
+    "correct": true,
+    "wall_seconds": 1.85
+  },
+  "technologie_1": {
+    "question": "Op welke datum werd TCP/IP officieel de standaard voor ARPANET?",
+    "answer": "We need answer in Dutch. User asks: \"Op welke datum werd TCP/IP officieel de standaard voor ARPANET? Antwoord kort en direct.\" Need provide date. Need ensure correctness. TCP/IP officially adopted as ARPANET standard? Known \"Network Control Program\" replaced by TCP/IP on January 1, 1983, often called \"flag day\". ARPANET officially switched to TCP/IP on January 1, 1983. Need short direct. Maybe \"1 januari 1983\". Need final only. Ensure no extra.\n</think>\n\n1 januari 1983",
+    "expected_keywords": [
+      "1983",
+      "1 januari"
+    ],
+    "matched_keywords": [
+      "1983",
+      "1 januari"
+    ],
+    "correct": true,
+    "wall_seconds": 2.57
+  },
+  "literatuur_1": {
+    "question": "Wie schreef 'De ontdekking van de hemel' en in welk jaar verscheen het?",
+    "answer": "We need answer in Dutch. User asks: \"Wie schreef 'De ontdekking van de hemel' en in welk jaar verscheen het? Antwoord kort en direct.\" Need identify author and year. \"De ontdekking van de hemel\" is Dutch translation of \"The Discovery of Heaven\" by Tomas Espersen? Wait: \"The Discovery of Heaven\" is a novel by Tomas Espersen? Let's recall. \"De ontdekking van de hemel\" is a novel by Tomas Espersen? Actually \"The Discovery of Heaven\" (Dutch: De ontdekking van de hemel) by Tomas Espersen? Let's verify memory. There is a novel \"The Discovery of Heaven\" by Tomas Espersen? Hmm.\n\nLet's think. \"De ontdekking van de hemel\" maybe by Tomas Espersen? No, Tomas Espersen is Danish author? \"The Discovery of Heaven\" is a 1992 novel by Tomas Espersen? Wait, I know \"The Discovery of Heaven\" is a novel by Tomas Espersen? Let's search memory: \"The Discovery of Heaven\" (Dutch: De ontdekking van de hemel) is a 1992 novel by Tomas Espersen? Actually author might be \"Tomas Espersen\"? Let's recall literary works: \"The Discovery of Heaven\" is a novel by Tomas Espersen? There is a book \"The Discovery of Heaven\" by Tomas Espersen, translated by? It won? Maybe by \"Tomas Espersen\" Danish? Let's check.\n\nAlternative: \"De ontdekking van de hemel\" is a novel by \"Tomas Espersen\"? I remember a book \"The Discovery of Heaven\" by \"Tomas Espersen\"? Wait, there is a novel \"The Discovery of Heaven\" by \"Tomas Espersen\"? Let's think of Dutch literature. \"De ontdekking van de hemel\" maybe by \"Tomas Espersen\" (Danish) published 1992? But Dutch title suggests Dutch original? Could be by \"Tomas Espersen\"? Let's recall: \"The Discovery of Heaven\" is a novel by \"Tomas Espersen\"? Hmm.\n\nMaybe it's by \"Tomas Espersen\"? Let's not guess. Let's use knowledge. \"De ontdekking van de hemel\" is a novel by \"Tomas Espersen\"? I can recall a book: \"The Discovery of Heaven\" by Tomas Espersen, translated by? It is about a Dutch painter? Wait.\n\nLet's search memory internally: There is a novel \"The Discovery of Heaven\" by \"Tomas Espersen\"? Actually I remember \"The Discovery of Heaven\" is a novel by \"Tomas Espersen\"? No, maybe by \"Tomas Espersen\" is a Danish author who wrote \"The Discovery of Heaven\"? Let's think of authors: \"Tomas Espersen\" maybe Danish, born 1958? Wrote \"The Discovery of Heaven\" (1992), \"The Last of the Just\"? Not sure.\n\nAnother possibility: \"De ontdekking van de hemel\" is by \"Tomas Espersen\"? Wait, the Dutch title could be original by \"Tomas Espersen\"? Let's recall from Wikipedia: \"The Discovery of Heaven\" (Dutch: De ontdekking van de hemel) is a 1992 novel by Tomas Espersen? It was translated into English by? It is a historical novel about a Dutch painter? Hmm.\n\nLet's think of Dutch books: \"De ontdekking van de hemel\" by \"Tomas Espersen\"? There is a Dutch author \"Tomas Espersen\"? No, Dutch author \"Tomas Espersen\" sounds Danish. Maybe the author is \"Tomas Espersen\" and the book was originally Danish? But title Dutch? Could be a Dutch translation of a Danish novel",
+    "expected_keywords": [
+      "mulisch",
+      "1992"
+    ],
+    "matched_keywords": [
+      "1992"
+    ],
+    "correct": false,
+    "wall_seconds": 15.72
+  },
+  "astronomie_1": {
+    "question": "Wat is de omlooptijd van Pluto rond de zon, in aardse jaren?",
+    "answer": "We need answer in Dutch. User asks: \"Wat is de omlooptijd van Pluto rond de zon, in aardse jaren? Antwoord kort en direct.\" Need short direct. Pluto orbital period about 248 Earth years (247.94). Answer: Ongeveer 248 aardse jaren. Ensure final concise.\n</think>\n\nOngeveer 248 aardse jaren.",
+    "expected_keywords": [
+      "248"
+    ],
+    "matched_keywords": [
+      "248"
+    ],
+    "correct": true,
+    "wall_seconds": 1.82
+  },
+  "economie_1": {
+    "question": "In welk jaar werd de eerste effectenbeurs ter wereld opgericht in Amsterdam, en welk bedrijf was de directe aanleiding?",
+    "answer": "We need answer in Dutch. User asks: \"In welk jaar werd de eerste effectenbeurs ter wereld opgericht in Amsterdam, en welk bedrijf was de directe aanleiding? Antwoord kort en direct.\" Need answer: first stock exchange in world established in Amsterdam, year and company direct cause. Likely Amsterdam Stock Exchange founded 1602? Direct cause Dutch East India Company (VOC) founded 1602, first public company issuing shares. Need be careful: \"eerste effectenbeurs ter wereld opgericht in Amsterdam\" maybe 1602, VOC. Some sources say Amsterdam Stock Exchange established in 1602, first stock exchange, due to Dutch East India Company. Could be 1602 and Vereenigde Oostindische Compagnie (VOC). Need short direct. Ensure no extra. Final Dutch: \"1602, de VOC (Vereenigde Oostindische Compagnie).\" Maybe \"de eerste effectenbeurs\" was not formally founded? But answer expected. Need maybe \"1602; de Nederlandse Oost-Indische Compagnie (VOC)\".\n</think>\n\n1602; de VOC (Vereenigde Oostindische Compagnie).",
+    "expected_keywords": [
+      "1602",
+      "voc"
+    ],
+    "matched_keywords": [
+      "1602",
+      "voc"
+    ],
+    "correct": true,
+    "wall_seconds": 5.25
+  },
+  "scheikunde_2": {
+    "question": "Wat is het smeltpunt van wolfraam in graden Celsius (het metaal met het hoogste smeltpunt)?",
+    "answer": "We moeten antwoorden in het Nederlands. Vraag: \"Wat is het smeltpunt van wolfraam in graden Celsius (het metaal met het hoogste smeltpunt)? Antwoord kort en direct.\" We moeten kort en direct antwoorden. Smeltpunt wolfraam is 3422 °C (soms 3422,99 °C). Kort: 3422 °C.\n</think>\n\n3422 °C",
+    "expected_keywords": [
+      "3422"
+    ],
+    "matched_keywords": [
+      "3422"
+    ],
+    "correct": true,
+    "wall_seconds": 2.08
+  },
+  "muziek_1": {
+    "question": "Uit hoeveel delen (bewegingen) bestaat Beethovens 9e symfonie?",
+    "answer": "We need answer in Dutch. User asks: \"Uit hoeveel delen (bewegingen) bestaat Beethovens 9e symfonie? Antwoord kort en direct.\" Need answer short direct. Beethoven's 9th Symphony has four movements. Need final only maybe \"Vier.\" Ensure Dutch.\n</think>\n\nVier",
+    "expected_keywords": [
+      "4",
+      "vier"
+    ],
+    "matched_keywords": [
+      "vier"
+    ],
+    "correct": true,
+    "wall_seconds": 1.43
+  },
+  "natuurkunde_1": {
+    "question": "Wat is de dichtheid van kwik bij kamertemperatuur, in g/cm3?",
+    "answer": "We moeten reageren in het Nederlands. Vraag: \"Wat is de dichtheid van kwik bij kamertemperatuur, in g/cm3? Antwoord kort en direct.\" We moeten kort en direct antwoorden. Dichtheid kwik bij kamertemperatuur ongeveer 13,5 g/cm3 (13,534 bij 20°C). Kort: 13,5 g/cm³.\n</think>\n\n13,5 g/cm³",
+    "expected_keywords": [
+      "13.5"
+    ],
+    "matched_keywords": [
+      "13.5-13.6 range"
+    ],
+    "correct": true,
+    "wall_seconds": 2.0
+  },
+  "combo_1": {
+    "question": "Wie was de Franse koning tijdens de bestorming van de Bastille in 1789, en hoeveel jaar had hij op dat moment geregeerd sinds zijn troonsbestijging?",
+    "answer": "We need answer in Dutch. User asks: \"Wie was de Franse koning tijdens de bestorming van de Bastille in 1789, en hoeveel jaar had hij op dat moment geregeerd sinds zijn troonsbestijging? Antwoord kort en direct.\"\n\nNeed identify French king during storming Bastille 1789: Louis XVI. Reign began 1774 (accession 10 May 1774). In 1789, how many years had he reigned since accession? Need likely 15 years. Let's verify: Louis XVI became king 10 May 1774. Storming Bastille 14 July 1789. From May 1774 to July 1789 is 15 years and 2 months. So 15 years. Short direct.\n\nNeed final concise. Ensure no extra.\n</think>\n\nLouis XVI; hij had toen 15 jaar geregeerd.",
+    "expected_keywords": [
+      "lodewijk",
+      "15"
+    ],
+    "matched_keywords": [
+      "15"
+    ],
+    "correct": false,
+    "wall_seconds": 4.23
+  },
+  "combo_2": {
+    "question": "De Slag bij Waterloo vond plaats in 1815. Napoleon werd geboren in 1769. Hoe oud was hij tijdens die slag (juni 1815)?",
+    "answer": "We need answer in Dutch, short direct. User asks: Battle of Waterloo 1815. Napoleon born 1769. How old during battle (June 1815)? Need calculate age. Born 15 August 1769. Battle 18 June 1815. Before birthday, so 45 years old (1815-1769=46, but birthday in August not yet reached, so 45). Need answer kort en direct. Final: 45 jaar.\n</think>\n\n45 jaar",
+    "expected_keywords": [
+      "45",
+      "46"
+    ],
+    "matched_keywords": [
+      "45",
+      "46"
+    ],
+    "correct": true,
+    "wall_seconds": 2.47
+  },
+  "_summary": {
+    "n_correct": 11,
+    "n_total": 14
+  }
+}

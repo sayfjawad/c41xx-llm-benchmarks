@@ -1,0 +1,66 @@
+{
+  "hard_reasoning": {
+    "content": "Hier is de stap-voor-stap berekening voor het totaal aantal verwerkte pakketten:\n\n**Stap 1: Bereken het aantal pakketten voor Ploeg 1**\n*   Werktijd: 08:00 tot 16:00 (totaal 8 uur).\n*   Eerste 3 uur: 3 uur × 120 pakketten/uur = 360 pakketten.\n*   Resterende tijd: 8 uur - 3 uur = 5 uur.\n*   Resterende uren: 5 uur × 90 pakketten/uur = 450 pakketten.\n*   Totaal Ploeg 1: 360 + 450 = 810 pakketten.\n\n**Stap 2: Bereken het aantal pakketten voor Ploeg 2**\n*   Werktijd: 08:00 tot 16:00 (totaal 8 uur).\n*   Pauze: 45 minuten (0,75 uur) na 5 uur werken.\n*   Effectieve werktijd: 8 uur - 0,75 uur = 7,25 uur.\n*   Snelheid: 100 pakketten/uur.\n*   Totaal Ploeg 2: 7,25 uur × 100 pakketten/uur = 725 pakketten.\n\n**Stap 3: Bereken het aantal pakketten voor Ploeg 3**\n*   Werktijd: 10:00 tot 16:00 (totaal 6 uur).\n*   Snelheid: 110 pakketten/uur.\n*   Totaal Ploeg 3: 6 uur × 110 pakketten/uur = 660 pakketten.\n\n**Stap 4: Bereken het totaal aantal pakketten**\n*   Totaal = Ploeg 1 + Ploeg 2 + Ploeg 3\n*   Totaal = 810 + 725 + 660\n*   Totaal = 2195 pakketten.\n\nEINDANTWOORD: 2195",
+    "wall_seconds": 121.12,
+    "usage": {
+      "completion_tokens": 2997,
+      "prompt_tokens": 246,
+      "total_tokens": 3243,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.14592775342582,
+    "correct": true,
+    "score_note": "expected 2195, got 2195"
+  },
+  "hard_coding": {
+    "content": "```python\nclass DListNode:\n    def __init__(self, key=0, value=0):\n        self.key = key\n        self.value = value\n        self.prev = None\n        self.next = None\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = {}\n        self.head = DListNode()\n        self.tail = DListNode()\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _add_node(self, node):\n        node.prev = self.head\n        node.next = self.head.next\n        self.head.next.prev = node\n        self.head.next = node\n\n    def _remove_node(self, node):\n        prev = node.prev\n        nxt = node.next\n        prev.next = nxt\n        nxt.prev = prev\n\n    def _move_to_head(self, node):\n        self._remove_node(node)\n        self._add_node(node)\n\n    def _pop_tail(self):\n        res = self.tail.prev\n        self._remove_node(res)\n        return res\n\n    def get(self, key: int) -> int:\n        if key in self.cache:\n            node = self.cache[key]\n            self._move_to_head(node)\n            return node.value\n        return -1\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            node = self.cache[key]\n            node.value = value\n            self._move_to_head(node)\n        else:\n            new_node = DListNode(key, value)\n            self.cache[key] = new_node\n            self._add_node(new_node)\n            if len(self.cache) > self.capacity:\n                tail_node = self._pop_tail()\n                del self.cache[tail_node.key]\n```",
+    "wall_seconds": 191.24,
+    "usage": {
+      "completion_tokens": 4948,
+      "prompt_tokens": 176,
+      "total_tokens": 5124,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.126027287064353,
+    "correct": true,
+    "score_note": "has LRUCache=True, OrderedDict=False, get/put=True/True"
+  },
+  "scribr_notulen": {
+    "content": "## Besluiten\n*   Er is 200.000 euro vrijgemaakt uit de algemene reserve voor de begrotingswijziging van het zwembad; de beslissing over de resterende 140.000 euro wordt uitgesteld tot na de uitslag van de subsidieaanvraag in juni.\n*   Er is vastgesteld dat bij afwijzing van de subsidie voor het zwembad er een nieuw raadsvoorstel moet komen, in plaats van een automatische bijstorting uit de reserve.\n*   Er is nog geen besluit genomen over het bestemmingsplan Noorderpark; eerst moet een onafhankelijke verkeerstoets worden afgewacht.\n*   Het voorstel om de begrotingswijziging voor het zwembad (met de gestelde voorwaarden) goed te keuren, is aangenomen met 6 stemmen voor en 1 tegen.\n\n## Actiepunten (met wie verantwoordelijk is)\n*   **Wethouder Bakker**: Zorgt dat het raadsvoorstel voor de resterende 140.000 euro (voor het zwembad) uiterlijk op de agenda van de raadsvergadering in juli staat, ongeacht de uitkomst van de subsidie.\n*   **Wethouder Smit**: Laat een onafhankelijke verkeerstoets uitvoeren voor het bestemmingsplan Noorderpark en koppelt de resultaten terug in de vergadering van mei.\n*   **Burgemeester De Groot**: Vraagt de status van de fietsbrug bij het station na bij de projectleider en koppelt dit terug in de volgende vergadering.\n*   **Voorzitter/Burgemeester**: Zet de klacht over geluidsoverlast van een lokaal bedrijf door naar de wethouder Handhaving (die niet aanwezig was).\n\n## Openstaande vragen\n*   Hoe wordt de parkeerdruk bij het Noorderpark opgevangen als het voorgestelde deelauto-concept niet voldoende blijkt te werken?\n*   Wat is de actuele status en opleverdatum van de fietsbrug bij het station (wordt onderzocht)?\n*   Hoe wordt de melding van geluidsoverlast door het lokale bedrijf concreet opgepakt door de wethouder Handhaving?",
+    "wall_seconds": 26.68,
+    "usage": {
+      "completion_tokens": 514,
+      "prompt_tokens": 1134,
+      "total_tokens": 1648,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 26.259856276172194,
+    "correct": true,
+    "score_note": "headers present: ## Besluiten, ## Actiepunten, ## Openstaande vragen"
+  },
+  "strict_instructions": {
+    "content": "{\"samenvatting\":\"Lijn 3 had temperatuurafwijking; twaalf eenheden afgekeurd, sensor vervangen, geen verzending naar klanten.\",\"kernwoorden\":[\"temperatuurafwijking\",\"afgekeurd\",\"sensor\",\"vervangen\",\"batch\"],\"risico_score\":0.35,\"vereist_escalatie\":false}",
+    "wall_seconds": 4.94,
+    "usage": {
+      "completion_tokens": 78,
+      "prompt_tokens": 235,
+      "total_tokens": 313,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "predicted_per_second": 27.534162028173526,
+    "correct": true,
+    "score_note": "valid JSON, keys=True, word_limit=True"
+  },
+  "_summary": {
+    "n_correct": 4,
+    "n_total": 4
+  }
+}

@@ -1,0 +1,4 @@
+# 1Cat-vLLM + RDMA userspace (libibverbs/mlx5/rdmacm) so NCCL can use RoCE instead of TCP sockets
+FROM ghcr.io/dsyzayn/1cat-vllm-v100-docker:latest
+USER root
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libibverbs1 ibverbs-providers librdmacm1 && rm -rf /var/lib/apt/lists/*

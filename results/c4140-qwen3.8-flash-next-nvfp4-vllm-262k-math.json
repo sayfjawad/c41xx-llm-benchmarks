@@ -1,0 +1,96 @@
+{
+  "stap_korting": {
+    "question": "Een winkel past na elkaar drie kortingen toe op een product van 250 euro: eerst 20% korting, dan nog eens 10% korting op het resterende bedrag, en tot slot een vaste korting van 15 euro. Wat is de einprijs? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <bedrag>'.",
+    "answer": "Oorspronkelijke prijs: 250 euro\n\n1. Eerste korting van 20%:  \n   250 × 0,80 = 200 euro\n\n2. Tweede korting van 10% op het resterende bedrag:  \n   200 × 0,90 = 180 euro\n\n3. Vaste korting van 15 euro:  \n   180 − 15 = 165 euro\n\nEINDANTWOORD: 165 euro",
+    "predicted_answer": "165 euro",
+    "expected_answer": "165 euro",
+    "correct": true,
+    "wall_seconds": 1.61,
+    "completion_tokens": 276
+  },
+  "logica_ridders": {
+    "question": "Op een eiland zijn er Ridders (spreken altijd de waarheid) en Schurken (liegen altijd). Je ontmoet A en B. A zegt: 'B is een schurk.' B zegt: 'A en ik zijn beiden ridders.' Wat zijn A en B? Redeneer stap voor stap en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: A=..., B=...'.",
+    "answer": "Stel eerst dat A een ridder is. Dan zegt A de waarheid, dus B is een schurk. B liegt dan altijd. B zegt: “A en ik zijn beiden ridders.” Omdat B een schurk is, is deze uitspraak inderdaad onwaar, want B is geen ridder. Dit is consistent.\n\nStel nu dat A een schurk is. Dan liegt A, dus de uitspraak “B is een schurk” is onwaar. Daarom zou B een ridder moeten zijn. Maar B zegt: “A en ik zijn beiden ridders.” Als B een ridder is, moet deze uitspraak waar zijn, maar A is dan een schurk. Dat kan niet.\n\nDus de enige consistente mogelijkheid is:\n\nEINDANTWOORD: A=ridder, B=schurk",
+    "predicted_answer": "a=ridder, b=schurk",
+    "expected_answer": "A=ridder, B=schurk",
+    "correct": true,
+    "wall_seconds": 3.16,
+    "completion_tokens": 421
+  },
+  "kans_dobbelsteen": {
+    "question": "Je gooit twee eerlijke dobbelstenen. Wat is de kans dat de som van de ogen precies 7 is? Geef het antwoord als breuk EN als percentage, op de laatste regel als 'EINDANTWOORD: <breuk> = <percentage>%'.",
+    "answer": "Er zijn 36 mogelijke uitkomsten bij twee dobbelstenen.  \nDe som is 7 bij: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → 6 gunstige uitkomsten.\n\nKans = 6/36 = 1/6 = 16⅔%.\n\nEINDANTWOORD: 1/6 = 16⅔%",
+    "predicted_answer": "1/6 = 16⅔%",
+    "expected_answer": "1/6",
+    "correct": true,
+    "wall_seconds": 2.77,
+    "completion_tokens": 419
+  },
+  "combinatoriek": {
+    "question": "Op hoeveel manieren kunnen 5 verschillende boeken worden verdeeld over 3 verschillende personen, als elke persoon minstens 1 boek moet krijgen? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We verdelen 5 verschillende boeken over 3 verschillende personen, waarbij elke persoon minstens 1 boek krijgt.\n\nDit is het aantal surjectieve functies van 5 boeken naar 3 personen.\n\nMet inclusie-exclusie:\n\n\\[\n3^5 - \\binom{3}{1}2^5 + \\binom{3}{2}1^5\n\\]\n\nBerekening:\n\n\\[\n3^5 = 243\n\\]\n\n\\[\n\\binom{3}{1}2^5 = 3 \\cdot 32 = 96\n\\]\n\n\\[\n\\binom{3}{2}1^5 = 3 \\cdot 1 = 3\n\\]\n\nDus:\n\n\\[\n243 - 96 + 3 = 150\n\\]\n\nEINDANTWOORD: 150",
+    "predicted_answer": "150",
+    "expected_answer": "150",
+    "correct": true,
+    "wall_seconds": 2.83,
+    "completion_tokens": 527
+  },
+  "algebra": {
+    "question": "Twee getallen hebben een som van 47 en een verschil van 13. Wat zijn de twee getallen? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <groot getal> en <klein getal>'.",
+    "answer": "Stel de twee getallen zijn \\(x\\) en \\(y\\), met \\(x > y\\).\n\n\\[\nx + y = 47\n\\]\n\\[\nx - y = 13\n\\]\n\nOptellen geeft:\n\n\\[\n2x = 60 \\Rightarrow x = 30\n\\]\n\nDan:\n\n\\[\ny = 47 - 30 = 17\n\\]\n\nEINDANTWOORD: 30 en 17",
+    "predicted_answer": "30 en 17",
+    "expected_answer": "30 en 17",
+    "correct": true,
+    "wall_seconds": 1.3,
+    "completion_tokens": 210
+  },
+  "getaltheorie": {
+    "question": "Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "We moeten de kleinste positieve gehele \\(n\\) vinden waarvoor \\(n!\\) deelbaar is door \\(1000\\).\n\nEerst ontbinden we \\(1000\\) in priemfactoren:\n\n\\[\n1000 = 10^3 = (2 \\cdot 5)^3 = 2^3 \\cdot 5^3\n\\]\n\nDus \\(n!\\) moet minstens drie factoren \\(2\\) en minstens drie factoren \\(5\\) bevatten.\n\nIn een faculteit zijn factoren \\(2\\) altijd overvloediger aanwezig dan factoren \\(5\\). Daarom is het aantal factoren \\(5\\) bepalend.\n\nHet aantal factoren \\(5\\) in \\(n!\\) is:\n\n\\[\n\\left\\lfloor \\frac{n}{5} \\right\\rfloor + \\left\\lfloor \\frac{n}{25} \\right\\rfloor + \\cdots\n\\]\n\nWe zoeken het kleinste \\(n\\) waarvoor dit minstens \\(3\\) is.\n\nVoor \\(n = 14\\):\n\n\\[\n\\left\\lfloor \\frac{14}{5} \\right\\rfloor = 2\n\\]\n\nDus er zijn maar twee factoren \\(5\\), dus \\(14!\\) is niet deelbaar door \\(1000\\).\n\nVoor \\(n = 15\\):\n\n\\[\n\\left\\lfloor \\frac{15}{5} \\right\\rfloor = 3\n\\]\n\nDus er zijn precies drie factoren \\(5\\). Ook zijn er genoeg factoren \\(2\\), bijvoorbeeld:\n\n\\[\n\\left\\lfloor \\frac{15}{2} \\right\\rfloor + \\left\\lfloor \\frac{15}{4} \\right\\rfloor + \\left\\lfloor \\frac{15}{8} \\right\\rfloor = 7 + 3 + 1 = 11\n\\]\n\nDus \\(15!\\) bevat minstens \\(2^3\\) en \\(5^3\\), en is dus deelbaar door \\(1000\\).\n\nEINDANTWOORD: 15",
+    "predicted_answer": "15",
+    "expected_answer": "15",
+    "correct": true,
+    "wall_seconds": 4.73,
+    "completion_tokens": 847
+  },
+  "meetkunde": {
+    "question": "Een rechthoekige driehoek heeft een hypotenusa van 13 cm en een rechthoekszijde van 5 cm. Wat is de oppervlakte van de driehoek? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> cm2'.",
+    "answer": "De andere rechthoekszijde is:\n\n\\[\n\\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12 \\text{ cm}\n\\]\n\nDe oppervlakte is:\n\n\\[\n\\frac{1}{2} \\times 5 \\times 12 = 30 \\text{ cm}^2\n\\]\n\nEINDANTWOORD: 30 cm2",
+    "predicted_answer": "30 cm2",
+    "expected_answer": "30 cm2",
+    "correct": true,
+    "wall_seconds": 1.63,
+    "completion_tokens": 258
+  },
+  "rente": {
+    "question": "Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Het bedrag na \\(n\\) jaren is:\n\n\\[\n1000 \\times 1{,}04^n\n\\]\n\nMeer dan verdubbeld betekent:\n\n\\[\n1000 \\times 1{,}04^n > 2000\n\\]\n\nDelen door 1000:\n\n\\[\n1{,}04^n > 2\n\\]\n\nNeem logaritmen:\n\n\\[\nn > \\frac{\\ln(2)}{\\ln(1{,}04)}\n\\]\n\n\\[\nn > \\frac{0{,}6931}{0{,}0392} \\approx 17{,}67\n\\]\n\nHet aantal volle jaren moet dus minstens 18 zijn.\n\nEINDANTWOORD: 18 jaar",
+    "predicted_answer": "18 jaar",
+    "expected_answer": "18 jaar",
+    "correct": true,
+    "wall_seconds": 3.12,
+    "completion_tokens": 444
+  },
+  "valstrik_schapen": {
+    "question": "Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "“Op 1 na sterven ze allemaal” betekent dat er 1 schaap overleeft.\n\nEINDANTWOORD: 1",
+    "predicted_answer": "1",
+    "expected_answer": "1 schaap",
+    "correct": true,
+    "wall_seconds": 1.13,
+    "completion_tokens": 159
+  },
+  "valstrik_caesar": {
+    "question": "Julius Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr. Hoe oud was hij toen hij stierf? Let goed op of zijn verjaardag dat jaar al was geweest. Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr.\n\nVan juli 100 v.Chr. tot juli 44 v.Chr. zou hij 56 jaar zijn geworden, want:\n\n100 − 44 = 56\n\nMaar hij stierf op 15 maart 44 v.Chr., dus vóór zijn verjaardag in juli 44 v.Chr. Zijn 56e verjaardag was dat jaar nog niet geweest.\n\nDaarom was hij op zijn dood 55 jaar oud.\n\nEINDANTWOORD: 55 jaar",
+    "predicted_answer": "55 jaar",
+    "expected_answer": "55 jaar",
+    "correct": true,
+    "wall_seconds": 4.1,
+    "completion_tokens": 625
+  },
+  "_summary": {
+    "n_correct": 10,
+    "n_total": 10
+  }
+}

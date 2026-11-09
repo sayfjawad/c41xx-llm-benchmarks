@@ -1,0 +1,96 @@
+{
+  "stap_korting": {
+    "question": "Een winkel past na elkaar drie kortingen toe op een product van 250 euro: eerst 20% korting, dan nog eens 10% korting op het resterende bedrag, en tot slot een vaste korting van 15 euro. Wat is de einprijs? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <bedrag>'.",
+    "answer": "Hier is de stap-voor-stap berekening van de eindprijs:\n\n1.  **Startprijs:** €250,00\n2.  **Eerste korting (20%):**\n    *   Kortingsbedrag: €250,00 × 0,20 = €50,00\n    *   Tussenprijs: €250,00 - €50,00 = €200,00\n3.  **Tweede korting (10% op het resterende bedrag):**\n    *   Kortingsbedrag: €200,00 × 0,10 = €20,00\n    *   Tussenprijs: €200,00 - €20,00 = €180,00\n4.  **Derde korting (vast bedrag van €15):**\n    *   Eindprijs: €180,00 - €15,00 = €165,00\n\nEINDANTWOORD: €165",
+    "predicted_answer": "€165",
+    "expected_answer": "165 euro",
+    "correct": true,
+    "wall_seconds": 59.15,
+    "completion_tokens": 1519
+  },
+  "logica_ridders": {
+    "question": "Op een eiland zijn er Ridders (spreken altijd de waarheid) en Schurken (liegen altijd). Je ontmoet A en B. A zegt: 'B is een schurk.' B zegt: 'A en ik zijn beiden ridders.' Wat zijn A en B? Redeneer stap voor stap en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: A=..., B=...'.",
+    "answer": "Hier is de stap-voor-stap redenering om de identiteit van A en B te bepalen:\n\n1.  **Analyse van de uitspraak van B:**\n    B zegt: \"A en ik zijn beiden ridders.\"\n    *   **Stel dat B een Ridder is:** Dan spreekt B de waarheid. Dit betekent dat de uitspraak \"A en ik zijn beiden ridders\" waar moet zijn. Hieruit volgt dat A ook een Ridder moet zijn.\n    *   **Stel dat B een Schurk is:** Dan liegt B. De uitspraak \"A en ik zijn beiden ridders\" is dan onwaar. Omdat B een Schurk is, is het deel \"ik ben een ridder\" al onwaar, waardoor de hele zin onwaar is. Dit is consistent met de aard van een Schurk.\n\n2.  **Testen van de hypothese dat B een Ridder is:**\n    Als B een Ridder is, moet A (volgens B's ware uitspraak) ook een Ridder zijn.\n    Als A een Ridder is, moet A de waarheid spreken.\n    A zegt: \"B is een schurk.\"\n    Als A de waarheid spreekt, moet B een Schurk zijn.\n    Dit leidt tot een tegenstrijdigheid: we gingen ervan uit dat B een Ridder is, maar A's uitspraak (die waar moet zijn als A een Ridder is) zegt dat B een Schurk is.\n    **Conclusie:** B kan geen Ridder zijn. B moet dus een **Schurk** zijn.\n\n3.  **Bepalen van de identiteit van A:**\n    We weten nu zeker dat B een Schurk is.\n    A zegt: \"B is een schurk.\"\n    Omdat B inderdaad een Schurk is, is de uitspraak van A **waar**.\n    Iemand die de waarheid spreekt, is een Ridder.\n    **Conclusie:** A is een **Ridder**.\n\n4.  **Controle:**\n    *   A (Ridder) zegt \"B is een schurk\". Dit is waar, want B is een Schurk. (Consistent)\n    *   B (Schurk) zegt \"A en ik zijn beiden ridders\". Dit is een leugen, want B is geen Ridder. (Consistent)\n\nEINDANTWOORD: A=Ridder, B=Schurk",
+    "predicted_answer": "a=ridder, b=schurk",
+    "expected_answer": "A=ridder, B=schurk",
+    "correct": true,
+    "wall_seconds": 75.38,
+    "completion_tokens": 1949
+  },
+  "kans_dobbelsteen": {
+    "question": "Je gooit twee eerlijke dobbelstenen. Wat is de kans dat de som van de ogen precies 7 is? Geef het antwoord als breuk EN als percentage, op de laatste regel als 'EINDANTWOORD: <breuk> = <percentage>%'.",
+    "answer": "",
+    "predicted_answer": "",
+    "expected_answer": "1/6",
+    "correct": false,
+    "wall_seconds": 77.49,
+    "completion_tokens": 2000
+  },
+  "combinatoriek": {
+    "question": "Op hoeveel manieren kunnen 5 verschillende boeken worden verdeeld over 3 verschillende personen, als elke persoon minstens 1 boek moet krijgen? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "",
+    "predicted_answer": "",
+    "expected_answer": "150",
+    "correct": false,
+    "wall_seconds": 77.17,
+    "completion_tokens": 2000
+  },
+  "algebra": {
+    "question": "Twee getallen hebben een som van 47 en een verschil van 13. Wat zijn de twee getallen? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <groot getal> en <klein getal>'.",
+    "answer": "Laten we de twee getallen $x$ en $y$ noemen, waarbij $x$ het grootste getal is en $y$ het kleinste getal.\n\nWe hebben de volgende informatie:\n1. De som is 47: $x + y = 47$\n2. Het verschil is 13: $x - y = 13$\n\nOm de getallen te vinden, kunnen we deze twee vergelijkingen bij elkaar optellen:\n$(x + y) + (x - y) = 47 + 13$\n$2x = 60$\n$x = 30$\n\nNu we weten dat het grootste getal 30 is, kunnen we het kleinste getal berekenen door dit in de eerste vergelijking in te vullen:\n$30 + y = 47$\n$y = 47 - 30$\n$y = 17$\n\nControle:\nSom: $30 + 17 = 47$ (klopt)\nVerschil: $30 - 17 = 13$ (klopt)\n\nEINDANTWOORD: 30 en 17",
+    "predicted_answer": "30 en 17",
+    "expected_answer": "30 en 17",
+    "correct": true,
+    "wall_seconds": 39.52,
+    "completion_tokens": 1005
+  },
+  "getaltheorie": {
+    "question": "Wat is de kleinste positieve gehele n waarvoor n! (n faculteit) deelbaar is door 1000? Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "",
+    "predicted_answer": "",
+    "expected_answer": "15",
+    "correct": false,
+    "wall_seconds": 77.4,
+    "completion_tokens": 2000
+  },
+  "meetkunde": {
+    "question": "Een rechthoekige driehoek heeft een hypotenusa van 13 cm en een rechthoekszijde van 5 cm. Wat is de oppervlakte van de driehoek? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> cm2'.",
+    "answer": "Om de oppervlakte van de rechthoekige driehoek te berekenen, hebben we de lengtes van beide rechthoekszijden nodig.\n\n1.  **Bepaal de lengte van de andere rechthoekszijde:**\n    We gebruiken de stelling van Pythagoras: $a^2 + b^2 = c^2$.\n    Hierbij is $c$ de hypotenusa (13 cm) en is $a$ een bekende rechthoekszijde (5 cm). We zoeken $b$.\n\n    $$5^2 + b^2 = 13^2$$\n    $$25 + b^2 = 169$$\n    $$b^2 = 169 - 25$$\n    $$b^2 = 144$$\n    $$b = \\sqrt{144}$$\n    $$b = 12 \\text{ cm}$$\n\n    De andere rechthoekszijde is dus 12 cm.\n\n2.  **Bereken de oppervlakte:**\n    De oppervlakte van een rechthoekige driehoek is de helft van het product van de twee rechthoekszijden.\n    $$\\text{Oppervlakte} = \\frac{1}{2} \\times \\text{basis} \\times \\text{hoogte}$$\n    $$\\text{Oppervlakte} = \\frac{1}{2} \\times 5 \\text{ cm} \\times 12 \\text{ cm}$$\n    $$\\text{Oppervlakte} = \\frac{1}{2} \\times 60 \\text{ cm}^2$$\n    $$\\text{Oppervlakte} = 30 \\text{ cm}^2$$\n\nEINDANTWOORD: 30 cm2",
+    "predicted_answer": "30 cm2",
+    "expected_answer": "30 cm2",
+    "correct": true,
+    "wall_seconds": 49.88,
+    "completion_tokens": 1278
+  },
+  "rente": {
+    "question": "Je zet 1000 euro op een spaarrekening met 4% samengestelde rente per jaar. Na hoeveel volle jaren is het bedrag meer dan verdubbeld? Toon je berekening en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "Om te berekenen na hoeveel jaren het bedrag verdubbeld is, gebruiken we de formule voor samengestelde interest:\n\n$$A = P \\cdot (1 + r)^t$$\n\nWaarbij:\n*   $A$ het eindbedrag is (in dit geval meer dan €2000, want verdubbeld van €1000)\n*   $P$ het startbedrag is (€1000)\n*   $r$ de rente per jaar is (4% = 0,04)\n*   $t$ het aantal jaren is\n\nWe stellen de vergelijking op:\n\n$$1000 \\cdot (1 + 0,04)^t > 2000$$\n\nDelen door 1000:\n\n$$1,04^t > 2$$\n\nOm $t$ op te lossen, nemen we de logaritme (ln) van beide kanten:\n\n$$\\ln(1,04^t) > \\ln(2)$$\n$$t \\cdot \\ln(1,04) > \\ln(2)$$\n$$t > \\frac{\\ln(2)}{\\ln(1,04)}$$\n\nNu berekenen we de waarden:\n\n$$\\ln(2) \\approx 0,69315$$\n$$\\ln(1,04) \\approx 0,03922$$\n\n$$t > \\frac{0,69315}{0,03922}$$\n$$t > 17,67$$\n\nDit betekent dat het bedrag na 17,67 jaar verdubbeld is. Omdat we zoeken naar het aantal **volle jaren** waarbij het bedrag **meer** dan verdubbeld is, moeten we afronden naar het eerstvolgende gehele getal.\n\nControle:\n*   Na 17 jaar: $1000 \\cdot 1,04^{17} \\approx €1947,90$ (nog niet verdubbeld)\n*   Na 18 jaar: $1000 \\cdot 1,04^{18} \\approx €2025,82$ (wel verdubbeld)\n\nHet duurt dus 18 volle jaren.\n\nEINDANTWOORD: 18 jaar",
+    "predicted_answer": "18 jaar",
+    "expected_answer": "18 jaar",
+    "correct": true,
+    "wall_seconds": 68.49,
+    "completion_tokens": 1766
+  },
+  "valstrik_schapen": {
+    "question": "Een boer heeft 17 schapen. Op 1 na sterven ze allemaal. Hoeveel schapen heeft hij nog? Geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal>'.",
+    "answer": "",
+    "predicted_answer": "",
+    "expected_answer": "1 schaap",
+    "correct": false,
+    "wall_seconds": 77.19,
+    "completion_tokens": 2000
+  },
+  "valstrik_caesar": {
+    "question": "Julius Caesar werd geboren in juli 100 v.Chr. en stierf op 15 maart 44 v.Chr. Hoe oud was hij toen hij stierf? Let goed op of zijn verjaardag dat jaar al was geweest. Toon je redenering en geef het eindantwoord op de laatste regel als 'EINDANTWOORD: <getal> jaar'.",
+    "answer": "",
+    "predicted_answer": "",
+    "expected_answer": "55 jaar",
+    "correct": false,
+    "wall_seconds": 77.67,
+    "completion_tokens": 2000
+  },
+  "_summary": {
+    "n_correct": 5,
+    "n_total": 10
+  }
+}

@@ -58,6 +58,7 @@ Omgevingsvariabelen (voor vLLM of een server elders):
 | Variabele | Effect |
 |---|---|
 | `BENCH_URL` | Volledige chat-completions-URL i.p.v. `http://127.0.0.1:<PORT>/v1/chat/completions` (bv. vLLM op `:8001`) |
+| `BENCH_MAX_TOKENS=N` | Overrides the output-token budget of `bench_math.py`, `bench_hard.py` and `bench_knowledge.py` (defaults 2000 / 3000 / 800-2000). Needed for reasoning models that otherwise spend the whole budget on thinking and return an empty answer (score artefact, not a quality verdict). |
 | `FORCE_THINKING=1` | Stuurt expliciet `enable_thinking: true` waar een script thinking niet zelf uitzet — nodig bij servers die thinking standaard UIT hebben (vLLM `--default-chat-template-kwargs`), zodat de thinking-per-taaktype gelijk blijft aan de llama.cpp-runs |
 
 ## Thinking/redeneren per taaktype
@@ -85,3 +86,13 @@ Dit is de belangrijkste les uit 7 modellen testen:
 - **Reasoning-modellen kunnen het volledige tokenbudget opsouperen** aan hun denkstap. Check zowel `content` als `reasoning_content` in de response.
 - **Multi-file GGUF's**: `hf download <repo> --include "<QUANT>/*"` (met `/*`!) — check eerst met `huggingface_hub.HfApi().model_info(repo, files_metadata=True)` welk patroon van toepassing is.
 - **Gemma 4 reasoning budget**: zonder `--reasoning-budget` limiet genereert Gemma 4 tot 1864 denk-tokens per rekenvraag — met `--reasoning-budget 800` blijft het <1600 en is het even accuraat.
+
+## Multi-node en server-onafhankelijke scripts (c4140 / c4140-2)
+
+| Script | Doel |
+|---|---|
+| `run_vllm_battery.sh <MODEL> <PORT> <PREFIX> [--steps ..]` | Volledige batterij (snelheid, 43-punts kwaliteit, sweep) tegen een reeds draaiende server (1Cat-vLLM of llama-server); start/stopt zelf niets |
+| `summarize_runs.py PREFIX ...` | Markdown-rij per run uit `results/` |
+| `multinode/*` | Serverscripts, Dockerfile met libibverbs, NCCL-test en 100G-linkconfiguratie voor twee C4140's; zie [C4140-NODES.md](../C4140-NODES.md) |
+
+`BENCH_MAX_TOKENS=<n>` overschrijft het tokenbudget van `bench_math.py`, `bench_hard.py` en `bench_knowledge.py` (nodig voor redeneermodellen die bij 2000 tokens nog bezig zijn met denken).

@@ -1,0 +1,25 @@
+{
+  "content": "ANTWOORD 1: Het budget voor ERP-project PRJ-2247 is 487.300 euro, te besteden over drie kwartalen, en dekt licenties, implementatiekosten en training van circa 180 medewerkers. Het dekt uitdrukkelijk géén maatwerk-koppelingen met externe klantsystemen; daarvoor moet apart budget bij de directie worden aangevraagd.\n\nANTWOORD 2: Fatima El Ouazzani, momenteel senior inkoper in Rotterdam, wordt per 1 september het nieuwe hoofd Inkoop. Haar vertrekkende voorganger is Robert Dijkhuis, die per die datum met pensioen gaat na 28 jaar dienstverband.\n\nANTWOORD 3: De CRM-migratie moet uiterlijk 15 november zijn afgerond. Als die deadline niet wordt gehaald, vervalt de korting van 12 procent op de licentiekosten van de huidige CRM-leverancier volledig.\n\nANTWOORD 4: Het ziekteverzuim is met 2,5 procentpunt gedaald sinds de invoering van het hybride werkbeleid, van 6,8 procent naar 4,3 procent.\n\nANTWOORD 5: Het voorstel voor de locatie aan de Overste den Oudenlaan is aangenomen met 9 stemmen voor en 3 tegen. Voorwaarde daarbij is dat de huurovereenkomst niet langer dan 5 jaar mag lopen.\n\nANTWOORD 6: Bas Kremer (juridisch adviseur) is actiehouder voor de juridische toets van het huurcontract, met een deadline van 20 december.\n\nTOTAALSAMENVATTING:\n- ERP-project PRJ-2247 heeft een budget van 487.300 euro (licenties, implementatie, training), exclusief maatwerk-koppelingen met externe klantsystemen.\n- Robert Dijkhuis gaat per 1 september met pensioen; Fatima El Ouazzani neemt de rol van hoofd Inkoop over, met een overdrachtsperiode vanaf half juli.\n- De CRM-migratie moet vóór 15 november afronden, anders vervalt de 12 procent licentiekorting volledig.\n- Het hybride werkbeleid verlaagde het ziekteverzuim van 6,8 naar 4,3 procent en wordt uitgebreid naar planners.\n- De nieuwe kantoorlocatie Utrecht (Overste den Oudenlaan) is aangenomen bij 9-3 met de voorwaarde van maximaal 5 jaar huur; Bas Kremer toetst het contract juridisch vóór 20 december.",
+  "usage": {
+    "completion_tokens": 1090,
+    "prompt_tokens": 10424,
+    "total_tokens": 11514,
+    "prompt_tokens_details": {
+      "cached_tokens": 9
+    }
+  },
+  "timings": {
+    "cache_n": 9,
+    "prompt_n": 10415,
+    "prompt_ms": 45796.813,
+    "prompt_per_token_ms": 4.3971975996159385,
+    "prompt_per_second": 227.41757161136957,
+    "predicted_n": 1090,
+    "predicted_ms": 75840.544,
+    "predicted_per_token_ms": 69.64237281910009,
+    "predicted_per_second": 14.359074217611099
+  },
+  "wall_seconds": 121.91,
+  "score": 6,
+  "n_needles": 6
+}

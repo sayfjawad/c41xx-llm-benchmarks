@@ -101,6 +101,46 @@ METADATA = {
         "verdict": "Beste allrounder: 39/43, 5/5 retrieval tot 253k tokens, ~100 t/s op Nederlandse tekst en 350–390 t/s op code — met 24.5 GB/GPU.",
         "notes": "39/43 (tools 3/4 in de officiële run: multi_entity sloeg 1 weer-call over en verzon 18°C; 5 herhalingen daarna allemaal 4/4 → 1 misser op 24 scenario's). Rekenen 10/10. Zelfde gewichten als de 131k-entry, maar het officiële 1Cat v1.5.1-profiel (qwen38_27b_nvfp4_dflash2): fp8_e4m3 KV, max-model-len 262144, --max-num-batched-tokens 8192, block-size 2048 / mamba-block-size 8192 → alle 8 SM70-versnellingspaden AAN, 24.5 i.p.v. 27.0 GB/GPU. Sweep: 5/5 naalden tot 253.161 tokens (262k = harde cap). Snelheid (scripts/bench_vllm_speed.py, usage-geteld, 1 koud + mediaan 3 warm, 256 out, T=1): prefill 4175/4300/3327/2457 t/s bij 4k/32k/117k/244k (+10–16% vs eigen flags), decode ~111 t/s bij 4k en 102 t/s bij 244k (TTFT 99 s). DFlash2-decodesnelheid hangt sterk af van de tekst: code/SQL (Engels) 350–390 t/s, Nederlandse proza ~97 t/s — de drafter voorspelt Engels/code veel beter. tg128 hieronder = Nederlandse synthetische tekst (conservatief). Gemeten op c4140 (zelfde 4× V100-SXM2-32GB).",
     },
+    "c4140-qwen3.8-flash-next-nvfp4-vllm-262k": {
+        "name": "Qwen3.8-Flash-Next NVFP4 + MTP4 (c4140, 1 node, 262k)", "publisher": "Alibaba",
+        "hf_repo": "1Cat-vLLM Qwen3.8-Flash-Next-NVFP4", "quant": "NVFP4 + MTP4",
+        "params_total_b": 180, "params_active_b": 10, "architecture": "Hybride lineaire-attention MoE — 1Cat-vLLM TP×4 (sm_70), KV-historie in host-RAM",
+        "disk_gb": 135.0, "ctx_cap": 262144,
+        "verdict": "Beste prestatie/kwaliteit-verhouding bij 262k: één c4140, ~110-125 t/s, 340 t/s bij 8 gebruikers.",
+        "notes": "c4140 (4x V100-32GB). 5/5 retrieval tot 253k. Zie C4140-NODES.md.",
+    },
+    "c4140-2-qwen3.8-27b-nvfp4-vllm-262k": {
+        "name": "Qwen3.8-27B NVFP4 (c4140-2, 4x16GB, 262k)", "publisher": "Alibaba",
+        "hf_repo": "QUASAR-QAT/Qwen3.8-27B-QUASAR-NVFP4", "quant": "NVFP4 (QUASAR QAT) + DFlash2",
+        "params_total_b": 27, "params_active_b": 27, "architecture": "Hybride Gated DeltaNet — vLLM/1Cat TP×4 (sm_70)",
+        "disk_gb": 20.0, "ctx_cap": 262144,
+        "verdict": "262k past ook op 4x V100-16GB (c4140-2).",
+        "notes": "c4140-2. 5/5 retrieval tot 253k. Zie C4140-NODES.md.",
+    },
+    "c4140+c4140-2-qwen3.5-397b-iq3xxs-llamacpp-rpc-262k": {
+        "name": "Qwen3.5-397B-A17B IQ3_XXS (2 nodes, llama.cpp RPC, 262k)", "publisher": "Alibaba",
+        "hf_repo": "unsloth/Qwen3.5-397B-A17B-GGUF", "quant": "UD-IQ3_XXS",
+        "params_total_b": 397, "params_active_b": 17, "architecture": "Hybride DeltaNet-MoE — llama.cpp RPC over 100GbE",
+        "disk_gb": 150.0, "ctx_cap": 262144,
+        "verdict": "Past alleen verdeeld over twee machines; zelfde kwaliteit als Flash-Next maar ~14 t/s.",
+        "notes": "Kennis/rekenen: zie -maxtok8000 runs (8000 tokens); 2000 tokens gaf lege antwoorden. Zie C4140-NODES.md.",
+    },
+    "c4140+c4140-2-glm-5.3-flash-ud-q3kxl-llamacpp-rpc-262k": {
+        "name": "GLM-5.3-Flash UD-Q3_K_XL (2 nodes, llama.cpp RPC, 262k)", "publisher": "Z.ai",
+        "hf_repo": "unsloth/GLM-5.3-Flash-GGUF", "quant": "UD-Q3_K_XL",
+        "params_total_b": 321, "params_active_b": 18, "architecture": "MoE — llama.cpp RPC over 100GbE",
+        "disk_gb": 147.5, "ctx_cap": 262144,
+        "verdict": "Werkt op 262k over twee nodes (8-15 t/s), kwaliteit gelijk aan de 397B.",
+        "notes": "5/5 retrieval tot 252k tokens. Herhaaltest 4/5. Zie C4140-NODES.md.",
+    },
+    "c4140+c4140-2-qwen3.8-27b-nvfp4-1cat-pp2tp4-64k": {
+        "name": "Qwen3.8-27B NVFP4 (2 nodes, 1Cat PP2xTP4, 64k)", "publisher": "Alibaba",
+        "hf_repo": "QUASAR-QAT/Qwen3.8-27B-QUASAR-NVFP4", "quant": "NVFP4 (QUASAR QAT)",
+        "params_total_b": 27, "params_active_b": 27, "architecture": "Hybride Gated DeltaNet — 1Cat-vLLM PP2xTP4 over 100GbE RoCE",
+        "disk_gb": 20.0, "ctx_cap": 65536,
+        "verdict": "1Cat draait over twee nodes, maar decode is ~15% trager dan op één node.",
+        "notes": "Bewijs van functionaliteit op 64k; tools/kennis/rekenen herhaald met correcte flags. Zie C4140-NODES.md.",
+    },
 }
 
 # Score-key per raw-bestand-suffix (identiek aan aggregate_results.py).

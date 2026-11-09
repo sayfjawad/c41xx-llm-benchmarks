@@ -1,0 +1,25 @@
+{
+  "content": "ANTWOORD 1: Het toegekende budget voor project PRJ-2247 bedraagt 487.300 euro en dit dekt uitdrukkelijk geen maatwerk-koppelingen met externe klantsystemen.\nANTWOORD 2: Per 1 september wordt Fatima El Ouazzani de nieuwe hoofd Inkoop, ter opvolging van de met pensioen gaande Robert Dijkhuis.\nANTWOORD 3: De deadline voor de CRM-migratie is 15 november, waarna een korting van 12 procent op de licentiekosten volledig vervalt.\nANTWOORD 4: Het ziekteverzuim is met 2,5 procentpunt gedaald, van 6,8 procent naar 4,3 procent sinds de invoering van het hybride werkbeleid.\nANTWOORD 5: Het voorstel is aangenomen met een stemverhouding van 9 voor en 3 tegen, onder de voorwaarde dat de huurovereenkomst niet langer dan 5 jaar loopt.\nANTWOORD 6: Bas Kremer is de actiehouder voor de juridische toets van het huurcontract met een gestelde deadline van 20 december.\n\nTOTAALSAMENVATTING\n*   Er is een budget van €487.300 vrijgemaakt voor een nieuw ERP-systeem (PRJ-2247), exclusief maatwerk-koppelingen.\n*   Fatima El Ouazzani volgt per 1 september Robert Dijkhuis op als hoofd Inkoop na een overdrachtsperiode van zes weken.\n*   De CRM-migratie moet uiterlijk 15 november gereed zijn om een korting van 12% op licentiekosten te behouden.\n*   Het hybride werkbeleid heeft het ziekteverzuim onder kantoorpersoneel verlaagd van 6,8% naar 4,3%.\n*   Een nieuwe kantoorlocatie in Utrecht (Overste den Oudenlaan) is goedgekeurd met een maximale huurtermijn van 5 jaar; Bas Kremer toetst het contract voor 20 december.",
+  "usage": {
+    "completion_tokens": 474,
+    "prompt_tokens": 10002,
+    "total_tokens": 10476,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 10002,
+    "prompt_ms": 51365.237,
+    "prompt_per_token_ms": 5.135496600679864,
+    "prompt_per_second": 194.7231354154951,
+    "predicted_n": 474,
+    "predicted_ms": 18400.373,
+    "predicted_per_token_ms": 38.90142283298097,
+    "predicted_per_second": 25.7060006337915
+  },
+  "wall_seconds": 70.08,
+  "score": 6,
+  "n_needles": 6
+}
